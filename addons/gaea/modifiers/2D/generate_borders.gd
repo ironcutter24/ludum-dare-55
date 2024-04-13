@@ -42,11 +42,13 @@ func _generate_border_walls(grid: GaeaGrid) -> void:
 
 			if mode != Mode.INCLUDE_DIAGONALS:
 				for i in [Vector2i(1, 1), Vector2i(1, -1), Vector2i(-1, -1), Vector2i(-1, 1)]:
+					pass
 					neighbors.erase(i)
 
 			# Get all empty neighbors and make it a border tile.
 			for neighbor in neighbors:
 				if not grid.has_cell(cell + neighbor, layer):
 					_temp_grid.set_value(cell + neighbor, border_tile_info, layer_to_generate_to)
+					_temp_grid.set_value(cell + neighbor, border_tile_info, layer)
 
 
