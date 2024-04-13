@@ -1,0 +1,2 @@
+class_name BaseRessource
+extends CharacterBody2D
