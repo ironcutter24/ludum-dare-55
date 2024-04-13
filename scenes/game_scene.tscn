@@ -10,4 +10,6 @@
 tile_set = SubResource("TileSet_0fog5")
 format = 2
 
+[node name="Camera2D" type="Camera2D" parent="."]
+
 [node name="Player" parent="." instance=ExtResource("1_2cjjq")]
