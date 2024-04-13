@@ -1,6 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://xtxsu48wnn1p"]
+[gd_scene load_steps=14 format=3 uid="uid://xtxsu48wnn1p"]
 
-[ext_resource type="PackedScene" uid="uid://bq4m4s407fgvm" path="res://scenes/player.tscn" id="1_2cjjq"]
+[ext_resource type="PackedScene" uid="uid://bq4m4s407fgvm" path="res://scenes/characters/player.tscn" id="1_2cjjq"]
 [ext_resource type="Texture2D" uid="uid://qmbpmbw8f533" path="res://graphics/TempTerrain.png" id="1_i07l8"]
 [ext_resource type="Script" path="res://addons/gaea/generators/2D/walker_generator/walker_generator.gd" id="3_2o4ap"]
 [ext_resource type="Script" path="res://addons/gaea/generators/2D/walker_generator/walker_generator_settings.gd" id="4_2i0rp"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://addons/gaea/renderers/2D/tilemap_gaea_renderer.gd" id="6_jutyt"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="7_ucjay"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="8_e87oi"]
+[ext_resource type="Theme" uid="uid://yqmay0cd53tl" path="res://ui/MetalPixel.tres" id="9_bvhi5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bwsck"]
 texture = ExtResource("1_i07l8")
@@ -202,3 +203,11 @@ editor_preview = true
 script = ExtResource("6_jutyt")
 tile_map = NodePath("../../../TileMap")
 generator = NodePath("../WalkerGenerator")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TestButton" type="Button" parent="CanvasLayer"]
+offset_right = 8.0
+offset_bottom = 8.0
+theme = ExtResource("9_bvhi5")
+text = "Placeholder theme button"
