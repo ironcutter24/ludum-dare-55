@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://xtxsu48wnn1p"]
 
-[ext_resource type="PackedScene" uid="uid://bq4m4s407fgvm" path="res://scenes/player.tscn" id="1_2cjjq"]
+[ext_resource type="PackedScene" uid="uid://bq4m4s407fgvm" path="res://scenes/characters/player.tscn" id="1_2cjjq"]
 [ext_resource type="Texture2D" uid="uid://qmbpmbw8f533" path="res://graphics/TempTerrain.png" id="1_i07l8"]
 [ext_resource type="Script" path="res://addons/gaea/generators/2D/walker_generator/walker_generator.gd" id="3_2o4ap"]
 [ext_resource type="Script" path="res://addons/gaea/generators/2D/walker_generator/walker_generator_settings.gd" id="4_2i0rp"]
