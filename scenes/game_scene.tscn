@@ -1,8 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://xtxsu48wnn1p"]
+[gd_scene load_steps=4 format=3 uid="uid://xtxsu48wnn1p"]
 
 [ext_resource type="PackedScene" uid="uid://bq4m4s407fgvm" path="res://scenes/player.tscn" id="1_2cjjq"]
+[ext_resource type="Script" path="res://addons/gaea/renderers/2D/gaea_renderer_2d.gd" id="2_oneux"]
 
 [sub_resource type="TileSet" id="TileSet_0fog5"]
+tile_size = Vector2i(16, 12)
 
 [node name="GameScene" type="Node2D"]
 
@@ -13,3 +15,10 @@ format = 2
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("1_2cjjq")]
+
+[node name="Controllers" type="Node" parent="."]
+
+[node name="TerrainGeneration" type="Node" parent="Controllers"]
+
+[node name="GaeaRenderer2D" type="Node" parent="Controllers/TerrainGeneration"]
+script = ExtResource("2_oneux")
