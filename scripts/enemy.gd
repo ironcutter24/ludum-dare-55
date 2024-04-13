@@ -1,8 +1,6 @@
 extends CharacterBody2D
 
-
 const SPEED = 25.0
-
 
 var to_player : Vector2 = Vector2.ZERO
 
