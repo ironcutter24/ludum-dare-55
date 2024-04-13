@@ -15,6 +15,7 @@ enum Mode {
 @export var mode: Mode = Mode.ADJACENT_ONLY
 ## If [code]true[/code], removes border tiles that don't have any neighbors of the same type.
 @export var remove_single_walls := false
+@export var layer_to_generate_to = 0;
 
 var _temp_grid: GaeaGrid
 
@@ -46,6 +47,6 @@ func _generate_border_walls(grid: GaeaGrid) -> void:
 			# Get all empty neighbors and make it a border tile.
 			for neighbor in neighbors:
 				if not grid.has_cell(cell + neighbor, layer):
-					_temp_grid.set_value(cell + neighbor, border_tile_info)
+					_temp_grid.set_value(cell + neighbor, border_tile_info, layer_to_generate_to)
 
 
