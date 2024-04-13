@@ -1,10 +1,40 @@
-[gd_scene load_steps=4 format=3 uid="uid://xtxsu48wnn1p"]
+[gd_scene load_steps=9 format=3 uid="uid://xtxsu48wnn1p"]
 
 [ext_resource type="PackedScene" uid="uid://bq4m4s407fgvm" path="res://scenes/player.tscn" id="1_2cjjq"]
 [ext_resource type="Script" path="res://addons/gaea/renderers/2D/gaea_renderer_2d.gd" id="2_oneux"]
+[ext_resource type="Script" path="res://addons/gaea/generators/2D/walker_generator/walker_generator.gd" id="3_2o4ap"]
+[ext_resource type="Script" path="res://addons/gaea/generators/2D/walker_generator/walker_generator_settings.gd" id="4_2i0rp"]
+[ext_resource type="Script" path="res://addons/gaea/tile_info/tilemap_tile_info.gd" id="5_n5i06"]
 
 [sub_resource type="TileSet" id="TileSet_0fog5"]
 tile_size = Vector2i(16, 12)
+
+[sub_resource type="Resource" id="Resource_n0fo0"]
+script = ExtResource("5_n5i06")
+type = 0
+tilemap_layer = 0
+source_id = 0
+atlas_coord = Vector2i(0, 0)
+alternative_tile = 0
+id = ""
+layer = 0
+
+[sub_resource type="Resource" id="Resource_n81ih"]
+resource_name = "Settings"
+script = ExtResource("4_2i0rp")
+tile = SubResource("Resource_n0fo0")
+fullness_check = 0
+max_tiles = 150
+constrain_world_size = false
+max_walkers = 5
+new_dir_chance = 0.5
+new_walker_chance = 0.05
+destroy_walker_chance = 0.05
+room_chances = {
+Vector2i(2, 2): 0.5,
+Vector2i(3, 3): 0.1
+}
+modifiers = Array[Resource("res://addons/gaea/modifiers/2D/modifier_2d.gd")]([])
 
 [node name="GameScene" type="Node2D"]
 
@@ -22,3 +52,9 @@ format = 2
 
 [node name="GaeaRenderer2D" type="Node" parent="Controllers/TerrainGeneration"]
 script = ExtResource("2_oneux")
+
+[node name="WalkerGenerator" type="Node" parent="Controllers/TerrainGeneration"]
+script = ExtResource("3_2o4ap")
+settings = SubResource("Resource_n81ih")
+tile_size = Vector2i(16, 12)
+editor_preview = true
