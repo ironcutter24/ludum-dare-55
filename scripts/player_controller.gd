@@ -2,7 +2,7 @@ class_name PlayerController
 extends CharacterBody2D
 
 
-const SPEED = 80.0
+const SPEED = 10.0
 
 var direction : Vector2
 
@@ -26,10 +26,11 @@ func _physics_process(delta):
 	direction.x = Input.get_axis("move_left", "move_right")
 	direction.y = Input.get_axis("move_up", "move_down")
 	
-	if direction:
-		velocity = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.y = move_toward(velocity.y, 0, SPEED)
+	
+	velocity += direction * SPEED
+	velocity = velocity.lerp(Vector2.ZERO, 4 * delta)
+	
+	$AnimatedSprite2D.scale.x = 1 if velocity.x >= 0 else -1
+	print(velocity.x)
 
-	move_and_collide(velocity * delta)
+	move_and_slide()
