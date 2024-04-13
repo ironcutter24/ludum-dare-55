@@ -1,3 +1,13 @@
-[gd_scene format=3 uid="uid://xtxsu48wnn1p"]
+[gd_scene load_steps=3 format=3 uid="uid://xtxsu48wnn1p"]
 
-[node name="MainScene" type="Node3D"]
+[ext_resource type="PackedScene" uid="uid://bq4m4s407fgvm" path="res://scenes/player.tscn" id="1_2cjjq"]
+
+[sub_resource type="TileSet" id="TileSet_0fog5"]
+
+[node name="GameScene" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_0fog5")
+format = 2
+
+[node name="Player" parent="." instance=ExtResource("1_2cjjq")]
