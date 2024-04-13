@@ -1,9 +1,12 @@
 extends Node
 
 
+const WALL_MASK = 1 << 0
+
 @export var menu_scene_path: String = ""
 @export var game_scene_path: String = ""
 
+var player_controller : PlayerController
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
