@@ -13,8 +13,12 @@ var recoilTimer = 0.0;
 
 @onready var targetPosition: Vector2 = global_position
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+@onready var healthBar: ProgressBar = $ProgressBar
+
 
 func _ready():
+	# The max value is the initial amount of health the creature has
+	healthBar.max_value = Health 
 	anim.sprite_frames = unitData.spriteFrames
 	
 func setUnitData(_unitData: UnitData):
@@ -47,6 +51,8 @@ func setMoveDirection(dir: Vector2):
 	direction = dir;
 	
 func _process(delta):
+	healthBar.value = Health
+	
 	if (Health < 0.0):
 		if get_parent() is PlayerController:
 			Global.load_hut_scene();
