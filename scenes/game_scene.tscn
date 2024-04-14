@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://xtxsu48wnn1p"]
+[gd_scene load_steps=18 format=3 uid="uid://xtxsu48wnn1p"]
 
 [ext_resource type="PackedScene" uid="uid://bq4m4s407fgvm" path="res://scenes/characters/player.tscn" id="1_2cjjq"]
 [ext_resource type="TileSet" uid="uid://caeyyuvfkxa7s" path="res://tileset.tres" id="1_k70tv"]
@@ -13,11 +13,8 @@
 [ext_resource type="Theme" uid="uid://yqmay0cd53tl" path="res://ui/MetalPixel.tres" id="9_bvhi5"]
 [ext_resource type="Script" path="res://scripts/EnemyGenerator.gd" id="9_jcy3v"]
 [ext_resource type="PackedScene" uid="uid://6hdu1dpg02ao" path="res://scenes/characters/base_enemy.tscn" id="10_vkbn0"]
-[ext_resource type="Resource" uid="uid://knpt37wbkmey" path="res://scenes/characters/characterData/Brawler.tres" id="14_2i5os"]
-[ext_resource type="Resource" uid="uid://dserwct6s4ynh" path="res://scenes/characters/characterData/Wizard.tres" id="15_avunq"]
-[ext_resource type="Resource" uid="uid://btkkowqb0rxgr" path="res://scenes/characters/characterData/Skeleton.tres" id="15_mqwgr"]
+[ext_resource type="Resource" uid="uid://dserwct6s4ynh" path="res://scenes/characters/characterData/FireMage.tres" id="15_avunq"]
 [ext_resource type="Resource" uid="uid://bmmaq5aif5ktb" path="res://scenes/characters/characterData/Witch.tres" id="16_fwo5l"]
-[ext_resource type="Resource" uid="uid://bf06ixf4gbe5x" path="res://scenes/characters/characterData/Zombie.tres" id="18_u7lrb"]
 
 [sub_resource type="Resource" id="Resource_n0fo0"]
 resource_name = "Room"
@@ -122,14 +119,14 @@ text = "Placeholder theme button"
 position = Vector2(38, 115)
 
 [node name="BaseUnit" parent="BaseEnemy" index="0"]
-unitData = ExtResource("14_2i5os")
+unitData = ExtResource("15_avunq")
 
 [node name="BaseEnemy3" parent="." node_paths=PackedStringArray("baseUnit") instance=ExtResource("10_vkbn0")]
 position = Vector2(-15, 184)
 baseUnit = NodePath("../BaseEnemy/BaseUnit")
 
 [node name="BaseUnit" parent="BaseEnemy3" index="0"]
-unitData = ExtResource("15_mqwgr")
+unitData = ExtResource("15_avunq")
 
 [node name="BaseEnemy2" parent="." instance=ExtResource("10_vkbn0")]
 position = Vector2(64, 65)
@@ -147,9 +144,6 @@ unitData = ExtResource("15_avunq")
 [node name="BaseEnemy5" parent="." node_paths=PackedStringArray("baseUnit") instance=ExtResource("10_vkbn0")]
 position = Vector2(-12, 340)
 baseUnit = NodePath("../BaseEnemy2/BaseUnit")
-
-[node name="BaseUnit" parent="BaseEnemy5" index="0"]
-unitData = ExtResource("18_u7lrb")
 
 [editable path="Player"]
 [editable path="BaseEnemy"]
