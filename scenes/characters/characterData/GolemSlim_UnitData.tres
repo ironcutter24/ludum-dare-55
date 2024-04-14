@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="UnitData" load_steps=6 format=3 uid="uid://blvxw1iokpwh5"]
+[gd_resource type="Resource" script_class="UnitData" load_steps=6 format=3 uid="uid://bknqqq0r0wq6o"]
 
 [ext_resource type="Resource" uid="uid://75bby780bp7k" path="res://scenes/ressources/resourceData/Meat.tres" id="1_6nwkl"]
 [ext_resource type="Script" path="res://scenes/ressources/resourceData/resourceWithCount.gd" id="2_4y0ha"]

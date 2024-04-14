@@ -14,8 +14,11 @@ var recoilTimer = 0.0;
 @onready var targetPosition: Vector2 = global_position
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
-
 func _ready():
+	anim.sprite_frames = unitData.spriteFrames
+	
+func setUnitData(_unitData: UnitData):
+	unitData = _unitData
 	anim.sprite_frames = unitData.spriteFrames
 
 func setTargetPosition(pos: Vector2):

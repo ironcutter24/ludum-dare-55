@@ -4,6 +4,8 @@ class_name EnemyGenerator
 @export var enemyScene: PackedScene;
 @export var generator: GaeaGenerator2D;
 @export var floorTile: Resource;
+@export var enemies: Array[UnitData]
+
 var enemyCount = 20;
 
 func generateEnemies():
@@ -18,9 +20,10 @@ func generateEnemies():
 			spawnEnemy(randTile);
 			
 func spawnEnemy(pos: Vector2i):
-	var inst: Node2D = enemyScene.instantiate();
+	var inst: BaseEnemy = enemyScene.instantiate();
 	get_parent().add_child(inst);
 	inst.global_position = pos * Vector2i(16, 12);
+	inst.setUnitData(enemies.pick_random());
 	enemyCount -= 1;
 	
 

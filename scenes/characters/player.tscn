@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_jrh5p"]
 [ext_resource type="PackedScene" uid="uid://41j2xcu8nw18" path="res://scenes/characters/base_unit.tscn" id="2_8eay1"]
-[ext_resource type="Resource" uid="uid://knpt37wbkmey" path="res://scenes/characters/characterData/Archer_UnitData.tres" id="3_u04bl"]
+[ext_resource type="Resource" uid="uid://xfcfv714tytc" path="res://scenes/characters/characterData/Archer_UnitData.tres" id="3_u04bl"]
 
 [node name="Player" type="Node2D" node_paths=PackedStringArray("baseUnit")]
 script = ExtResource("1_jrh5p")

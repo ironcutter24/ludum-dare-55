@@ -1,4 +1,5 @@
 extends Node2D
+class_name BaseEnemy
 
 const STOP_DISTANCE = 20.0
 
@@ -6,10 +7,10 @@ var to_player : Vector2 = Vector2.ZERO
 @export var baseUnit: BaseUnit;
 var last_seen_player_position: Vector2 = Vector2.ZERO;
 
-
-func _physics_process(delta):
+func setUnitData(_unitData: UnitData):
+	baseUnit.setUnitData(_unitData);
 	
-
+func _physics_process(delta):
 	
 	var space_state = get_world_2d().direct_space_state
 	# use global coordinates, not local to node

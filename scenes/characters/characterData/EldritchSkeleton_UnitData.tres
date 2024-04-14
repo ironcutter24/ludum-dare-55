@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="UnitData" load_steps=8 format=3 uid="uid://btkkowqb0rxgr"]
+[gd_resource type="Resource" script_class="UnitData" load_steps=8 format=3 uid="uid://b7rsmdkxd0ggf"]
 
 [ext_resource type="Resource" uid="uid://cmsa8uf0wqh8g" path="res://scenes/ressources/resourceData/Bone.tres" id="1_o55su"]
 [ext_resource type="Script" path="res://scenes/ressources/resourceData/resourceWithCount.gd" id="2_nrnw3"]
