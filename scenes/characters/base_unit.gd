@@ -48,6 +48,8 @@ func setMoveDirection(dir: Vector2):
 	
 func _process(delta):
 	if (Health < 0.0):
+		if get_parent() is PlayerController:
+			Global.load_hut_scene();
 		get_parent().queue_free();
 
 func _physics_process(_delta):

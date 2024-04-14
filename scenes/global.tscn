@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bo5fba0w57vas"]
+[gd_scene load_steps=3 format=3 uid="uid://bo5fba0w57vas"]
 
 [ext_resource type="Script" path="res://scripts/global.gd" id="1_0ll6k"]
+[ext_resource type="PackedScene" uid="uid://bniwotomm86q1" path="res://scenes/pixel_perfect_hut_scene.tscn" id="2_y7xvm"]
 
 [node name="Global" type="Node"]
 script = ExtResource("1_0ll6k")
 menu_scene_path = "res://scenes/menu_scene.tscn"
 game_scene_path = "res://scenes/game_scene.tscn"
+hut_scene = ExtResource("2_y7xvm")

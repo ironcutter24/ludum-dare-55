@@ -3,5 +3,5 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if (!StoryProgress.hasSeenIntro):
+	if (!StoryProgress.isIntroCompleted):
 		Dialogic.start_timeline("intro")

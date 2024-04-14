@@ -1,6 +1,6 @@
 extends Node
 
-var hasSeenIntro := false;
+var isIntroCompleted := false;
 var hasCreatedPortal := false;
 
 func _ready():
@@ -8,4 +8,4 @@ func _ready():
 		
 func _on_dialogic_signal(argument:String):
 	if argument == "intro_completed":
-		StoryProgress.hasSeenIntro = true;
+		StoryProgress.isIntroCompleted = true;

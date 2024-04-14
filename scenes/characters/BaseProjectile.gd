@@ -21,8 +21,6 @@ func _process(delta):
 	for body in get_overlapping_bodies():
 		
 		if body is BaseUnit:
-			print(isPlayerBullet);
-			print((body.get_parent() is BaseEnemy));
 			var isOppositeTeam = isPlayerBullet == (body.get_parent() is BaseEnemy)
 			if isOppositeTeam:
 				body.Health -= unitData.projectileDamage;

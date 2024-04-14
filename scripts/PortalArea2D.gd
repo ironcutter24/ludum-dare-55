@@ -10,11 +10,15 @@ func _ready():
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	if (StoryProgress.hasCreatedPortal):
 		portal.visible = true;
+	if (StoryProgress.isIntroCompleted):
+		playerController.isEnabled = true;
  
 func _on_dialogic_signal(argument:String):
 	if argument == "shake":
 		portal.visible = true;
+		StoryProgress.hasCreatedPortal = true;
 	if argument == "intro_completed":
+		StoryProgress.isIntroCompleted = true;
 		playerController.isEnabled = true;
 
 func _process(_delta):
