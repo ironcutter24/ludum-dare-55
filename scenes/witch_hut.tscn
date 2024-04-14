@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c0hy2gpo6l6xe"]
+[gd_scene load_steps=19 format=3 uid="uid://c0hy2gpo6l6xe"]
 
 [ext_resource type="Script" path="res://addons/gaea/generators/2D/cellular_generator/cellular_generator.gd" id="2_1t8ax"]
 [ext_resource type="PackedScene" uid="uid://bq4m4s407fgvm" path="res://scenes/characters/player.tscn" id="2_48ett"]
@@ -9,7 +9,6 @@
 [ext_resource type="TileSet" uid="uid://caeyyuvfkxa7s" path="res://tileset.tres" id="5_cra1u"]
 [ext_resource type="Script" path="res://addons/gaea/renderers/2D/tilemap_gaea_renderer.gd" id="5_tyapg"]
 [ext_resource type="PackedScene" uid="uid://vt7ykyq87kok" path="res://scenes/pixel_perfect_game_scene.tscn" id="5_xsgyf"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="7_x8330"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y1s1q"]
 atlas = ExtResource("3_uyyhi")
@@ -89,6 +88,9 @@ position = Vector2(1512, 1288)
 position = Vector2(-33, -12)
 isEnabled = false
 
+[node name="Camera2D" type="Camera2D" parent="HutCenter/Player/BaseUnit" index="2"]
+position = Vector2(34, 12)
+
 [node name="PortalArea2D" type="Area2D" parent="HutCenter" node_paths=PackedStringArray("portal", "playerController", "rootWitchScene")]
 collision_layer = 3
 collision_mask = 19
@@ -118,9 +120,6 @@ tile_set = ExtResource("5_cra1u")
 format = 2
 layer_0/tile_data = PackedInt32Array(7209051, 0, 5, 7209052, 262144, 2, 7209053, 65536, 2, 7274589, 393216, 3, 7274591, 393216, 3, 7209055, 0, 2, 7209056, 262144, 2, 7209057, 262144, 4, 6946906, 262144, 5, 6881370, 262144, 3, 6946907, 393216, 0, 6815835, 262144, 4, 7077986, 262144, 5, 7012450, 262144, 3, 6946914, 262144, 5, 6881378, 65536, 4, 6815836, 262144, 2, 6815837, 262144, 2, 6815838, 262144, 4, 6815839, 262144, 4, 6815840, 262144, 4, 6815841, 65536, 2, 6881376, 393216, 0, 6881375, 393216, 0, 6881374, 393216, 0, 6881373, 393216, 0, 6881372, 393216, 0, 6946908, 393216, 0, 6946909, 393216, 0, 6881377, 0, 3, 6946912, 393216, 0, 6946911, 393216, 0, 6946910, 393216, 0, 7012446, 393216, 0, 7012447, 393216, 0, 7012448, 393216, 0, 7012449, 393216, 0, 7077984, 393216, 0, 7077983, 393216, 0, 7077982, 393216, 0, 7077981, 393216, 0, 7012445, 393216, 0, 7012444, 393216, 0, 7077980, 393216, 0, 7143515, 65536, 2, 7012442, 262144, 3, 7077978, 262144, 5, 7143514, 0, 3, 7143522, 262144, 5, 7077979, 393216, 0, 7012443, 393216, 0, 7077985, 393216, 0, 6946913, 393216, 0, 7143520, 393216, 0, 7143519, 393216, 0, 7143518, 393216, 0, 7143517, 393216, 0, 7143516, 393216, 0, 7209054, 393216, 0, 7274590, 393216, 0, 7209058, 65536, 3, 6815834, 0, 4, 6881371, 393216, 0, 7143521, 393216, 0)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(1513, 1288)
-
 [node name="TerrainGenerator" type="Node" parent="."]
 
 [node name="CellularGenerator" type="Node" parent="TerrainGenerator"]
@@ -134,27 +133,6 @@ script = ExtResource("5_tyapg")
 tile_map = NodePath("../../TileMap")
 generator = NodePath("../CellularGenerator")
 
-[node name="PhantomCamera2D" type="Node2D" parent="."]
-position = Vector2(1513, 1288)
-script = ExtResource("7_x8330")
-priority_override = false
-priority = 0
-zoom = Vector2(1, 1)
-follow_mode = 2
-follow_target = NodePath("")
-follow_parameters/target_offset = Vector2(0, 0)
-follow_parameters/damping = false
-frame_preview = true
-pixel_perfect = false
-limit/draw_limits = false
-limit/left = -10000000
-limit/top = -10000000
-limit/right = 10000000
-limit/bottom = 10000000
-limit/limit_node_target = NodePath("")
-limit/smoothed = false
-tween_parameters = null
-tween_on_load = false
-inactive_update_mode = 0
-
 [connection signal="area_entered" from="HutCenter/PortalArea2D" to="HutCenter/PortalArea2D" method="_on_area_entered"]
+
+[editable path="HutCenter/Player"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://xtxsu48wnn1p"]
+[gd_scene load_steps=18 format=3 uid="uid://xtxsu48wnn1p"]
 
 [ext_resource type="PackedScene" uid="uid://bq4m4s407fgvm" path="res://scenes/characters/player.tscn" id="1_2cjjq"]
 [ext_resource type="TileSet" uid="uid://caeyyuvfkxa7s" path="res://tileset.tres" id="1_k70tv"]
@@ -7,8 +7,6 @@
 [ext_resource type="Script" path="res://addons/gaea/renderers/2D/tilemap_gaea_renderer.gd" id="6_jutyt"]
 [ext_resource type="Resource" uid="uid://mbni6mdjs846" path="res://tileData/generateBorder1.tres" id="6_r5d4s"]
 [ext_resource type="Resource" uid="uid://esuh3wgbx0o5" path="res://tileData/generateBorder2.tres" id="7_h5mnt"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="7_ucjay"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="8_e87oi"]
 [ext_resource type="Resource" uid="uid://dtx3i3thtdcux" path="res://tileData/floorTile.tres" id="9_abchu"]
 [ext_resource type="Theme" uid="uid://yqmay0cd53tl" path="res://ui/MetalPixel.tres" id="9_bvhi5"]
 [ext_resource type="Script" path="res://scripts/EnemyGenerator.gd" id="9_jcy3v"]
@@ -39,41 +37,14 @@ modifiers = Array[Resource("res://addons/gaea/modifiers/2D/modifier_2d.gd")]([Ex
 [node name="GameScene" type="Node2D"]
 y_sort_enabled = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
-script = ExtResource("8_e87oi")
-
-[node name="PhantomCamera2D" type="Node2D" parent="."]
-script = ExtResource("7_ucjay")
-priority_override = false
-priority = 0
-zoom = Vector2(1, 1)
-follow_mode = 5
-follow_target = NodePath("../YSortedItems/Player/BaseUnit")
-follow_parameters/target_offset = Vector2(0, 0)
-follow_parameters/damping = false
-follow_parameters/dead_zone_horizontal = 0.0
-follow_parameters/dead_zone_vertical = 0.0
-follow_parameters/viewfinder_in_play = false
-frame_preview = true
-pixel_perfect = false
-limit/draw_limits = false
-limit/left = -10000000
-limit/top = -10000000
-limit/right = 10000000
-limit/bottom = 10000000
-limit/limit_node_target = NodePath("")
-limit/smoothed = false
-tween_parameters = null
-tween_on_load = false
-inactive_update_mode = 0
-
 [node name="YSortedItems" type="Node2D" parent="."]
 y_sort_enabled = true
 
 [node name="Player" parent="YSortedItems" instance=ExtResource("1_2cjjq")]
 y_sort_enabled = true
+
+[node name="Camera2D" type="Camera2D" parent="YSortedItems/Player/BaseUnit" index="2"]
+zoom = Vector2(4, 4)
 
 [node name="TileMap" type="TileMap" parent="YSortedItems"]
 y_sort_enabled = true
