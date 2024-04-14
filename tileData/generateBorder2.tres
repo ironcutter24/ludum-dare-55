@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="GenerateBorder" load_steps=4 format=3 uid="uid://esuh3wgbx0o5"]
+
+[ext_resource type="Script" path="res://addons/gaea/tile_info/tilemap_tile_info.gd" id="1_xhc2q"]
+[ext_resource type="Script" path="res://addons/gaea/modifiers/2D/generate_borders.gd" id="2_4w5f0"]
+
+[sub_resource type="Resource" id="Resource_510c1"]
+script = ExtResource("1_xhc2q")
+type = 1
+tilemap_layer = 0
+terrain_set = 0
+terrain = 1
+id = ""
+layer = 0
+
+[resource]
+script = ExtResource("2_4w5f0")
+border_tile_info = SubResource("Resource_510c1")
+mode = 1
+remove_single_walls = false
+layer_to_generate_to = 1
+affected_layers = Array[int]([0])
+filter_type = 0

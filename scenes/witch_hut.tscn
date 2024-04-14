@@ -1,8 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://c0hy2gpo6l6xe"]
+[gd_scene load_steps=20 format=3 uid="uid://c0hy2gpo6l6xe"]
 
 [ext_resource type="Script" path="res://addons/gaea/generators/2D/cellular_generator/cellular_generator.gd" id="2_1t8ax"]
 [ext_resource type="PackedScene" uid="uid://bq4m4s407fgvm" path="res://scenes/characters/player.tscn" id="2_48ett"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_dpsv6"]
 [ext_resource type="Script" path="res://addons/gaea/generators/2D/cellular_generator/cellular_generator_settings.gd" id="3_6ila3"]
 [ext_resource type="Texture2D" uid="uid://qmbpmbw8f533" path="res://graphics/TempTerrain.png" id="3_uyyhi"]
 [ext_resource type="Script" path="res://scripts/PortalArea2D.gd" id="3_w852g"]
@@ -120,9 +119,6 @@ layer_0/tile_data = PackedInt32Array(7209051, 0, 5, 7209052, 262144, 2, 7209053,
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1513, 1288)
-
-[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
-script = ExtResource("2_dpsv6")
 
 [node name="TerrainGenerator" type="Node" parent="."]
 

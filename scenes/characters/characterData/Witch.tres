@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=3 format=3 uid="uid://bmmaq5aif5ktb"]
+
+[ext_resource type="Script" path="res://scenes/characters/characterData/unitData.gd" id="1_pum56"]
+[ext_resource type="Texture2D" uid="uid://likek32f8v4b" path="res://graphics/witch.png" id="2_lpbi5"]
+
+[resource]
+script = ExtResource("1_pum56")
+prices = Array[Resource("res://scenes/ressources/resourceData/resourceWithCount.gd")]([])
+uniqueName = "Witch"
+speed = 50.0
+isSwingingAttack = false
+texture = ExtResource("2_lpbi5")
