@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=7 format=3 uid="uid://btkkowqb0rxgr"]
+
+[ext_resource type="Resource" uid="uid://cmsa8uf0wqh8g" path="res://scenes/ressources/resourceData/Bone.tres" id="1_f6hjo"]
+[ext_resource type="Script" path="res://scenes/characters/characterData/unitData.gd" id="1_n0vyd"]
+[ext_resource type="Script" path="res://scenes/ressources/resourceData/resourceWithCount.gd" id="2_2r534"]
+[ext_resource type="Resource" uid="uid://i3yxtmjtqqi7" path="res://scenes/ressources/resourceData/Sword.tres" id="3_gucc1"]
+
+[sub_resource type="Resource" id="Resource_qxffp"]
+script = ExtResource("2_2r534")
+resourceData = ExtResource("1_f6hjo")
+count = 4
+
+[sub_resource type="Resource" id="Resource_uofob"]
+script = ExtResource("2_2r534")
+resourceData = ExtResource("3_gucc1")
+count = 1
+
+[resource]
+script = ExtResource("1_n0vyd")
+prices = Array[ExtResource("2_2r534")]([SubResource("Resource_qxffp"), SubResource("Resource_uofob")])
+uniqueName = "Skeleton"
+speed = 60.0

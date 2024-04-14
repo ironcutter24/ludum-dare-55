@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="RessourceData" load_steps=2 format=3 uid="uid://ctendq803atda"]
+
+[ext_resource type="Script" path="res://scenes/ressources/resourceData/resourceData.gd" id="1_yvba0"]
+
+[resource]
+script = ExtResource("1_yvba0")
+uniqueName = "Bow"
