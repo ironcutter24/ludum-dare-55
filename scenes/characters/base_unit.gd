@@ -26,17 +26,17 @@ func TryAttack():
 		_attack();
 		
 func _attack():
-	var inst = projectilePrefab.instantiate() as BaseProjectile;
-	var projectileDirection = (targetPosition - global_position).normalized();
-	inst.normalizedDirection = projectileDirection;
-	inst.unitData = unitData;
-	inst.refresh();
-	
-	recoilTimer = unitData.attackRecoil;
-	inst.global_position = global_position;
-	print("attacked");
 
-	
+	if (unitData.projectileTexture != null):
+		var inst = projectilePrefab.instantiate() as BaseProjectile;
+		var projectileDirection = (targetPosition - global_position).normalized();
+		inst.normalizedDirection = projectileDirection;
+		inst.unitData = unitData;
+		inst.refresh();
+		get_parent().add_child(inst);
+		inst.global_position = global_position;	
+
+	recoilTimer = unitData.attackRecoil;
 
 func setMoveDirection(dir: Vector2):
 	direction = dir;

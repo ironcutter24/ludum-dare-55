@@ -12,7 +12,7 @@ func refresh():
 	aliveTimer = unitData.projectileAliveTime;
 
 func _process(delta):
-	global_position += normalizedDirection * unitData.projectileSpeed
+	global_position += delta * normalizedDirection * unitData.projectileSpeed
 	aliveTimer -= delta;
 	if (aliveTimer <= 0):
 		queue_free();
