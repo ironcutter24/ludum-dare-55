@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://addons/gaea/tile_info/tilemap_tile_info.gd" id="4_6pgl3"]
 [ext_resource type="TileSet" uid="uid://caeyyuvfkxa7s" path="res://tileset.tres" id="5_cra1u"]
 [ext_resource type="Script" path="res://addons/gaea/renderers/2D/tilemap_gaea_renderer.gd" id="5_tyapg"]
-[ext_resource type="PackedScene" uid="uid://vt7ykyq87kok" path="res://scenes/pixel_perfect_game_scene.tscn" id="5_xsgyf"]
+[ext_resource type="PackedScene" path="res://scenes/pixel_perfect_game_scene.tscn" id="5_xsgyf"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="7_x8330"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y1s1q"]
