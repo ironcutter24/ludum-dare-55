@@ -47,8 +47,10 @@ Vector2i(3, 3): 0.1
 modifiers = Array[Resource("res://addons/gaea/modifiers/2D/modifier_2d.gd")]([ExtResource("6_r5d4s"), ExtResource("7_h5mnt")])
 
 [node name="GameScene" type="Node2D"]
+y_sort_enabled = true
 
 [node name="TileMap" type="TileMap" parent="."]
+y_sort_enabled = true
 tile_set = ExtResource("1_k70tv")
 format = 2
 layer_0/y_sort_enabled = true
