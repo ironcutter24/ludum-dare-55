@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=6 format=3 uid="uid://knpt37wbkmey"]
+
+[ext_resource type="Resource" uid="uid://75bby780bp7k" path="res://scenes/ressources/resourceData/Meat.tres" id="1_2n7v0"]
+[ext_resource type="Script" path="res://scenes/ressources/resourceData/resourceWithCount.gd" id="2_oix2d"]
+[ext_resource type="Script" path="res://scenes/characters/characterData/unitData.gd" id="3_rags8"]
+[ext_resource type="SpriteFrames" uid="uid://nu5a120ip535" path="res://graphics/animations/Archer_SpriteFrames.tres" id="4_in11v"]
+
+[sub_resource type="Resource" id="Resource_bd8vr"]
+script = ExtResource("2_oix2d")
+resourceData = ExtResource("1_2n7v0")
+count = 16
+
+[resource]
+script = ExtResource("3_rags8")
+prices = Array[ExtResource("2_oix2d")]([SubResource("Resource_bd8vr")])
+uniqueName = "Brawler"
+speed = 40.0
+isSwingingAttack = false
+projectileSpeed = 50.0
+projectileAliveTime = 1.0
+attackRecoil = 1.0
+spriteFrames = ExtResource("4_in11v")

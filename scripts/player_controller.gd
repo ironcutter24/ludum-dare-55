@@ -7,9 +7,6 @@ var looking_right = true
 @export var isEnabled = true;
 @export var baseUnit: BaseUnit;
 
-#@onready var anim : AnimatedSprite2D = $AnimatedWitch
-
-
 
 func _enter_tree():
 	Global.player_controller = baseUnit

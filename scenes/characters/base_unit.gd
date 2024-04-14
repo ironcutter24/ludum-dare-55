@@ -4,17 +4,19 @@ extends CharacterBody2D
 @export var Speed: int = 50
 @export var Health: int = 100
 @export var unitData: UnitData;
-@export var sprite: Sprite2D;
 @export var projectilePrefab: PackedScene;
 
 
 var direction : Vector2
-var looking_right = true
+var is_flipped = false
 var recoilTimer = 0.0;
-@onready var targetPosition: Vector2 = global_position;
+
+@onready var targetPosition: Vector2 = global_position
+@onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+
 
 func _ready():
-	sprite.texture = unitData.texture;
+	anim.sprite_frames = unitData.spriteFrames
 
 func setTargetPosition(pos: Vector2):
 	targetPosition = pos;
@@ -45,13 +47,13 @@ func _physics_process(_delta):
 		velocity = direction * unitData.speed;
 		
 		if direction.x != 0.0:
-			looking_right = direction.x > 0
+			is_flipped = direction.x < 0
 		
-		# anim.play("walk")
+		anim.play("walk")
 	else:
-		velocity = Vector2.ZERO  #velocity.lerp(Vector2.ZERO, 4 * delta)
-		# anim.play("idle")
+		velocity = Vector2.ZERO
+		anim.play("default")
 	
-	sprite.scale.x = 1 if looking_right else -1
+	anim.flip_h = is_flipped
 
 	move_and_slide()

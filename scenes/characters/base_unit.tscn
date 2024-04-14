@@ -1,23 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://41j2xcu8nw18"]
+[gd_scene load_steps=5 format=3 uid="uid://41j2xcu8nw18"]
 
 [ext_resource type="Script" path="res://scenes/characters/base_unit.gd" id="1_83234"]
-[ext_resource type="Texture2D" uid="uid://ct3ep7in6ev8" path="res://graphics/units/pyromancer/pyromancerAtlasTexture.tres" id="2_1rkby"]
-[ext_resource type="Resource" uid="uid://bf06ixf4gbe5x" path="res://scenes/characters/characterData/Zombie.tres" id="2_hfbib"]
+[ext_resource type="Resource" uid="uid://bf06ixf4gbe5x" path="res://scenes/characters/characterData/LeechWorm_UnitData.tres" id="2_r8c68"]
 [ext_resource type="PackedScene" uid="uid://dwlj873e5ntu8" path="res://scenes/base_projectile.tscn" id="3_ivqfo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dmi2q"]
-size = Vector2(13, 9)
+size = Vector2(10, 8)
 
-[node name="BaseUnit" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
+[node name="BaseUnit" type="CharacterBody2D"]
 script = ExtResource("1_83234")
-unitData = ExtResource("2_hfbib")
-sprite = NodePath("Sprite2D")
+unitData = ExtResource("2_r8c68")
 projectilePrefab = ExtResource("3_ivqfo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 3.5)
+position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_dmi2q")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -8)
-texture = ExtResource("2_1rkby")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+animation = &""

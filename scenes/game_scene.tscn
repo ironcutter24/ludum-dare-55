@@ -13,11 +13,11 @@
 [ext_resource type="Theme" uid="uid://yqmay0cd53tl" path="res://ui/MetalPixel.tres" id="9_bvhi5"]
 [ext_resource type="Script" path="res://scripts/EnemyGenerator.gd" id="9_jcy3v"]
 [ext_resource type="PackedScene" uid="uid://6hdu1dpg02ao" path="res://scenes/characters/base_enemy.tscn" id="10_vkbn0"]
-[ext_resource type="Resource" uid="uid://knpt37wbkmey" path="res://scenes/characters/characterData/Brawler.tres" id="14_2i5os"]
+[ext_resource type="Resource" uid="uid://knpt37wbkmey" path="res://scenes/characters/characterData/Archer_UnitData.tres" id="14_2i5os"]
 [ext_resource type="Resource" uid="uid://dserwct6s4ynh" path="res://scenes/characters/characterData/Wizard.tres" id="15_avunq"]
-[ext_resource type="Resource" uid="uid://btkkowqb0rxgr" path="res://scenes/characters/characterData/Skeleton.tres" id="15_mqwgr"]
+[ext_resource type="Resource" uid="uid://btkkowqb0rxgr" path="res://scenes/characters/characterData/EldritchSkeleton_UnitData.tres" id="15_mqwgr"]
 [ext_resource type="Resource" uid="uid://bmmaq5aif5ktb" path="res://scenes/characters/characterData/Witch.tres" id="16_fwo5l"]
-[ext_resource type="Resource" uid="uid://bf06ixf4gbe5x" path="res://scenes/characters/characterData/Zombie.tres" id="18_u7lrb"]
+[ext_resource type="Resource" uid="uid://bf06ixf4gbe5x" path="res://scenes/characters/characterData/LeechWorm_UnitData.tres" id="18_u7lrb"]
 
 [sub_resource type="Resource" id="Resource_n0fo0"]
 resource_name = "Room"

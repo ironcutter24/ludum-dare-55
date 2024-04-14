@@ -22,4 +22,7 @@ prices = Array[ExtResource("2_wfda3")]([SubResource("Resource_fvv6o"), SubResour
 uniqueName = "Wizard"
 speed = 50.0
 isSwingingAttack = false
+projectileSpeed = 50.0
+projectileAliveTime = 1.0
+attackRecoil = 1.0
 texture = ExtResource("5_h3kn6")

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/characters/BaseProjectile.gd" id="1_lsp4v"]
 [ext_resource type="Texture2D" uid="uid://bukmacbj8vux2" path="res://graphics/units/pyromancer/fireProjectileAtlasTexture.tres" id="2_fv1pj"]
-[ext_resource type="Resource" uid="uid://bf06ixf4gbe5x" path="res://scenes/characters/characterData/Zombie.tres" id="2_r0qlt"]
+[ext_resource type="Resource" uid="uid://bf06ixf4gbe5x" path="res://scenes/characters/characterData/LeechWorm_UnitData.tres" id="2_r0qlt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ufihs"]
 radius = 3.0

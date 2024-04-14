@@ -10,5 +10,4 @@ class_name UnitData
 @export var projectileTexture: AtlasTexture;
 @export var projectileAliveTime = 1.0;
 @export var attackRecoil: float = 1.0;
-@export var texture: AtlasTexture;
-
+@export var spriteFrames: SpriteFrames;
