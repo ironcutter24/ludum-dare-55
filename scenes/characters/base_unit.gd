@@ -64,11 +64,13 @@ func _process(delta):
 func InstantiateDrops():
 	for resource: ResourceWithCount in unitData.prices:
 		for i in range(resource.count):
-			if randf() < 0.05:
+			if randf() < 0.1:
+				var resourceSpawnDist = 10;
 				var instantiatedResource: BaseResource = resourcePrefab.instantiate();
 				instantiatedResource.resourceData = resource.resourceData;
-				
-		
+				instantiatedResource.global_position = global_position + Vector2(randi_range(-resourceSpawnDist, resourceSpawnDist), randi_range(-resourceSpawnDist, resourceSpawnDist));
+				instantiatedResource.Refresh();
+				print("spawned");
 
 func _physics_process(_delta):
 	z_index = global_position.y;

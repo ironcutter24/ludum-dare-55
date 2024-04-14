@@ -23,5 +23,5 @@ projectileAliveTime = 1.5
 projectileDamage = 10
 health = 20
 bulletsPierce = false
-attackRecoil = 1.0
+attackRecoil = 0.3
 spriteFrames = ExtResource("4_m6ink")

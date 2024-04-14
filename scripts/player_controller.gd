@@ -15,7 +15,7 @@ func _exit_tree():
 
 func _input(event):
 	# Interaction
-	if event.is_action_pressed("attack") and isEnabled:
+	if event.is_action("attack") and isEnabled:
 		baseUnit.TryAttack()
 
 func _physics_process(_delta):
@@ -23,3 +23,4 @@ func _physics_process(_delta):
 		direction.x = Input.get_axis("move_left", "move_right")
 		direction.y = Input.get_axis("move_up", "move_down")
 		baseUnit.setMoveDirection(direction);
+		baseUnit.setTargetPosition(get_global_mouse_position());
