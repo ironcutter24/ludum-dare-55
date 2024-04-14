@@ -13,9 +13,8 @@ unitData = ExtResource("2_r8c68")
 projectilePrefab = ExtResource("3_ivqfo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_dmi2q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -16)
+position = Vector2(0, -12)
 animation = &""

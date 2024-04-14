@@ -5,8 +5,11 @@ class_name EnemyGenerator
 @export var generator: GaeaGenerator2D;
 @export var floorTile: Resource;
 @export var enemies: Array[UnitData]
+@export var player: BaseUnit;
+@onready var unitsToNotCreateNear: Array[BaseUnit] = [player];
 
 var enemyCount = 20;
+var distBetweenUnits = 20;
 
 func generateEnemies():
 	while (enemyCount > 0):
@@ -14,15 +17,28 @@ func generateEnemies():
 			roundi(100.0 * (randf() - 0.5)),
 			roundi(100.0 * (randf() - 0.5))
 			);
-
-		var tile = generator.grid.get_value(randTile, 0);
-		var wallTile = generator.grid.get_value(randTile, 1);
-		if (tile == floorTile and wallTile == null):
+		
+		var isValidSquare = true;
+		for x in range(-1,2):
+			for y in range(-1,2):
+				var tile = generator.grid.get_value(randTile + Vector2i(x,y), 0);
+				if (tile != floorTile):
+					isValidSquare = false;
+				
+		var isFarFromOthers = true;	
+		if isValidSquare == true:
+			for enemy in unitsToNotCreateNear:
+				var dist: Vector2 = randTile * Vector2i(16,12) - Vector2i(enemy.global_position)
+				if dist.length_squared() < distBetweenUnits * distBetweenUnits:
+					isFarFromOthers = false;
+		
+		if isValidSquare and isFarFromOthers:
 			spawnEnemy(randTile);
 			
 func spawnEnemy(pos: Vector2i):
 	var inst: BaseEnemy = enemyScene.instantiate();
 	get_parent().add_child(inst);
+	unitsToNotCreateNear.push_back(inst);
 	inst.global_position = pos * Vector2i(16, 12);
 	inst.setUnitData(enemies.pick_random());
 	enemyCount -= 1;

@@ -3,7 +3,7 @@
 [ext_resource type="Resource" uid="uid://75bby780bp7k" path="res://scenes/ressources/resourceData/Meat.tres" id="1_lm34t"]
 [ext_resource type="Script" path="res://scenes/ressources/resourceData/resourceWithCount.gd" id="2_8avdy"]
 [ext_resource type="Script" path="res://scenes/characters/characterData/unitData.gd" id="3_7vtgq"]
-[ext_resource type="Texture2D" uid="uid://ct3ep7in6ev8" path="res://graphics/units/pyromancer/pyromancerAtlasTexture.tres" id="3_unlm7"]
+[ext_resource type="Texture2D" uid="uid://bukmacbj8vux2" path="res://graphics/units/pyromancer/fireProjectileAtlasTexture.tres" id="3_dgnjb"]
 [ext_resource type="SpriteFrames" uid="uid://pjf8wres2uhc" path="res://graphics/animations/Pyromancer_SpriteFrames.tres" id="4_m6ink"]
 
 [sub_resource type="Resource" id="Resource_bd8vr"]
@@ -18,7 +18,7 @@ uniqueName = "Brawler"
 speed = 40.0
 isSwingingAttack = false
 projectileSpeed = 50.0
-projectileTexture = ExtResource("3_unlm7")
+projectileTexture = ExtResource("3_dgnjb")
 projectileAliveTime = 1.0
 attackRecoil = 1.0
 spriteFrames = ExtResource("4_m6ink")

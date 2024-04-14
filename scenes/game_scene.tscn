@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://xtxsu48wnn1p"]
+[gd_scene load_steps=20 format=3 uid="uid://xtxsu48wnn1p"]
 
 [ext_resource type="PackedScene" uid="uid://bq4m4s407fgvm" path="res://scenes/characters/player.tscn" id="1_2cjjq"]
 [ext_resource type="TileSet" uid="uid://caeyyuvfkxa7s" path="res://tileset.tres" id="1_k70tv"]
@@ -14,7 +14,6 @@
 [ext_resource type="Script" path="res://scripts/EnemyGenerator.gd" id="9_jcy3v"]
 [ext_resource type="PackedScene" uid="uid://6hdu1dpg02ao" path="res://scenes/characters/base_enemy.tscn" id="10_vkbn0"]
 [ext_resource type="Resource" uid="uid://xfcfv714tytc" path="res://scenes/characters/characterData/Archer_UnitData.tres" id="13_m01mj"]
-[ext_resource type="Resource" uid="uid://b7rsmdkxd0ggf" path="res://scenes/characters/characterData/EldritchSkeleton_UnitData.tres" id="14_ibs11"]
 [ext_resource type="Resource" uid="uid://b5lq16gs61htq" path="res://scenes/characters/characterData/GolemBig_UnitData.tres" id="15_vh46a"]
 [ext_resource type="Resource" uid="uid://bknqqq0r0wq6o" path="res://scenes/characters/characterData/GolemSlim_UnitData.tres" id="16_yj1n6"]
 [ext_resource type="Resource" uid="uid://d3lthuleixkfi" path="res://scenes/characters/characterData/LeechWorm_UnitData.tres" id="17_na35e"]
@@ -96,12 +95,13 @@ script = ExtResource("6_jutyt")
 tile_map = NodePath("../../../TileMap")
 generator = NodePath("../WalkerGenerator")
 
-[node name="EnemyGenerator" type="Node" parent="Controllers" node_paths=PackedStringArray("generator")]
+[node name="EnemyGenerator" type="Node" parent="Controllers" node_paths=PackedStringArray("generator", "player")]
 script = ExtResource("9_jcy3v")
 enemyScene = ExtResource("10_vkbn0")
 generator = NodePath("../TerrainGeneration/WalkerGenerator")
 floorTile = ExtResource("9_abchu")
-enemies = Array[Resource("res://scenes/characters/characterData/unitData.gd")]([ExtResource("13_m01mj"), ExtResource("14_ibs11"), ExtResource("15_vh46a"), ExtResource("16_yj1n6"), ExtResource("17_na35e"), ExtResource("18_2yolu")])
+enemies = Array[Resource("res://scenes/characters/characterData/unitData.gd")]([ExtResource("13_m01mj"), ExtResource("15_vh46a"), ExtResource("16_yj1n6"), ExtResource("17_na35e"), ExtResource("18_2yolu")])
+player = NodePath("../../Player/BaseUnit")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
