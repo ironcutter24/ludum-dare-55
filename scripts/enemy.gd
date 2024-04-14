@@ -1,7 +1,7 @@
 extends Node2D
 class_name BaseEnemy
 
-const STOP_DISTANCE = 20.0
+const STOP_DISTANCE = 40.0
 
 var to_player : Vector2 = Vector2.ZERO
 @export var baseUnit: BaseUnit;

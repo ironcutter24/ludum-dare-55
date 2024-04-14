@@ -13,7 +13,7 @@ var recoilTimer = 0.0;
 
 @onready var targetPosition: Vector2 = global_position
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
-@onready var healthBar: ProgressBar = $ProgressBar
+@export var healthBar: ProgressBar
 
 
 func _ready():
@@ -51,7 +51,7 @@ func setMoveDirection(dir: Vector2):
 	direction = dir;
 	
 func _process(delta):
-	healthBar.value = Health
+	healthBar.value = Health / unitData.health;
 	
 	if (Health < 0.0):
 		if get_parent() is PlayerController:
