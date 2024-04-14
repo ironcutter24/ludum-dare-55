@@ -19,6 +19,7 @@ func _ready():
 	
 func setUnitData(_unitData: UnitData):
 	unitData = _unitData
+	Health = unitData.health;
 	anim.sprite_frames = unitData.spriteFrames
 
 func setTargetPosition(pos: Vector2):
@@ -38,11 +39,16 @@ func _attack():
 		inst.refresh();
 		get_parent().add_child(inst);
 		inst.global_position = global_position;	
+		inst.isPlayerBullet = !(get_parent() is BaseEnemy)
 
 	recoilTimer = unitData.attackRecoil;
 
 func setMoveDirection(dir: Vector2):
 	direction = dir;
+	
+func _process(delta):
+	if (Health < 0.0):
+		get_parent().queue_free();
 
 func _physics_process(_delta):
 	z_index = global_position.y;

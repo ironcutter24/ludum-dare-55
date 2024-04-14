@@ -8,6 +8,8 @@
 radius = 3.0
 
 [node name="BaseProjectile" type="Area2D" node_paths=PackedStringArray("sprite")]
+collision_layer = 0
+collision_mask = 16
 script = ExtResource("1_lsp4v")
 sprite = NodePath("Sprite2D")
 unitData = ExtResource("2_r0qlt")
