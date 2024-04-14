@@ -67,7 +67,7 @@ priority_override = false
 priority = 0
 zoom = Vector2(1, 1)
 follow_mode = 5
-follow_target = NodePath("../Player")
+follow_target = NodePath("../Player/BaseUnit")
 follow_parameters/target_offset = Vector2(0, 0)
 follow_parameters/damping = false
 follow_parameters/dead_zone_horizontal = 0.0
@@ -149,6 +149,7 @@ baseUnit = NodePath("../BaseEnemy2/BaseUnit")
 [node name="BaseUnit" parent="BaseEnemy5" index="0"]
 unitData = ExtResource("18_u7lrb")
 
+[editable path="Player"]
 [editable path="BaseEnemy"]
 [editable path="BaseEnemy3"]
 [editable path="BaseEnemy2"]

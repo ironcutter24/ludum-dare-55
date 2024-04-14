@@ -6,7 +6,7 @@ const WALL_MASK = 1 << 0
 @export var menu_scene_path: String = ""
 @export var game_scene_path: String = ""
 
-var player_controller : PlayerController
+var player_controller : BaseUnit
 var playerRessources: Dictionary # Value is ressource name, key is how much the player has
 var playerUnit: UnitData # Unit the player is
 

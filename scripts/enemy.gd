@@ -17,7 +17,8 @@ func _physics_process(delta):
 	
 	if result.size() == 0 && to_player.length() > STOP_DISTANCE:
 		baseUnit.setMoveDirection(to_player.normalized())
+		baseUnit.setTargetPosition(Global.player_controller.global_position);
+		baseUnit.TryAttack();
 	else:
 		var moveDirection = Vector2(0,0);
 		baseUnit.setMoveDirection(moveDirection)
-

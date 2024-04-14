@@ -16,7 +16,7 @@ func _ready():
 func setTargetPosition(pos: Vector2):
 	pass
 	
-func attack():
+func TryAttack():
 	pass;
 
 func setMoveDirection(dir: Vector2):
