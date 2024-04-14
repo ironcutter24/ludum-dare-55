@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://bniwotomm86q1"]
+[gd_scene load_steps=3 format=3 uid="uid://bniwotomm86q1"]
 
+[ext_resource type="Script" path="res://scripts/IntroController.gd" id="2_6bhkb"]
 [ext_resource type="PackedScene" uid="uid://c0hy2gpo6l6xe" path="res://scenes/witch_hut.tscn" id="2_bukuc"]
 
-[node name="PixelPerfectGameScene" type="Node2D"]
+[node name="PixelPerfectHutScene" type="Node2D"]
+
+[node name="IntroController" type="Node" parent="."]
+script = ExtResource("2_6bhkb")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

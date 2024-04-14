@@ -1,0 +1,12 @@
+[music path="res://audio/Say_My_Spell.ogg" fade="0.0" volume="0.0"]
+join witch 1
+witch (Neutral): Lorem!
+witch (Neutral): Ipsum!
+witch (Neutral): dolor sit...
+witch (Neutral): elit?
+leave witch
+[signal arg="shake"]
+[wait time="1.0"]
+witch (Neutral): Oh dear
+witch (Neutral): It seems I've mistaken an amet for an elit
+witch (Neutral): Looks like I've got some demons to banish in the basement
