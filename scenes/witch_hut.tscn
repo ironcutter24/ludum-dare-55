@@ -90,11 +90,14 @@ position = Vector2(1512, 1288)
 position = Vector2(-33, -12)
 isEnabled = false
 
-[node name="PortalArea2D" type="Area2D" parent="HutCenter" node_paths=PackedStringArray("portal", "playerController")]
+[node name="PortalArea2D" type="Area2D" parent="HutCenter" node_paths=PackedStringArray("portal", "playerController", "rootWitchScene")]
+collision_layer = 3
+collision_mask = 19
 script = ExtResource("3_w852g")
 portal = NodePath("AnimatedPortal")
 playerController = NodePath("../Player")
 dungeonScene = ExtResource("5_xsgyf")
+rootWitchScene = NodePath("../..")
 
 [node name="AnimatedPortal" type="AnimatedSprite2D" parent="HutCenter/PortalArea2D"]
 visible = false
