@@ -45,6 +45,7 @@ func setMoveDirection(dir: Vector2):
 	direction = dir;
 
 func _physics_process(_delta):
+	z_index = global_position.y;
 	recoilTimer -= _delta;
 	if direction.length() > 0:
 		velocity = direction * unitData.speed;

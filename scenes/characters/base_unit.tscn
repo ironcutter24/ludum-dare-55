@@ -8,6 +8,7 @@
 size = Vector2(10, 8)
 
 [node name="BaseUnit" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_83234")
 unitData = ExtResource("2_r8c68")
 projectilePrefab = ExtResource("3_ivqfo")

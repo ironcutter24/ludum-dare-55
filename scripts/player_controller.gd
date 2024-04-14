@@ -6,14 +6,12 @@ var looking_right = true
 
 @export var isEnabled = true;
 @export var baseUnit: BaseUnit;
-
-
+	
 func _enter_tree():
 	Global.player_controller = baseUnit
 
 func _exit_tree():
 	Global.player_controller = null
-
 
 func _input(event):
 	# Interaction
