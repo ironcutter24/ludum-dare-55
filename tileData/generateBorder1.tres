@@ -1,20 +1,11 @@
-[gd_resource type="Resource" script_class="GenerateBorder" load_steps=4 format=3 uid="uid://mbni6mdjs846"]
+[gd_resource type="Resource" script_class="GenerateBorder" load_steps=3 format=3 uid="uid://mbni6mdjs846"]
 
-[ext_resource type="Script" path="res://addons/gaea/tile_info/tilemap_tile_info.gd" id="1_iuyvf"]
+[ext_resource type="Resource" uid="uid://dtx3i3thtdcux" path="res://tileData/floorTile.tres" id="1_4geex"]
 [ext_resource type="Script" path="res://addons/gaea/modifiers/2D/generate_borders.gd" id="2_36e7l"]
-
-[sub_resource type="Resource" id="Resource_c5d71"]
-script = ExtResource("1_iuyvf")
-type = 1
-tilemap_layer = 0
-terrain_set = 0
-terrain = 0
-id = ""
-layer = 0
 
 [resource]
 script = ExtResource("2_36e7l")
-border_tile_info = SubResource("Resource_c5d71")
+border_tile_info = ExtResource("1_4geex")
 mode = 1
 remove_single_walls = true
 layer_to_generate_to = 0

@@ -44,7 +44,6 @@ func generate(starting_grid: GaeaGrid = null) -> void:
 
 	if is_instance_valid(next_pass):
 		next_pass.generate(grid)
-		return
 
 	var time_elapsed :int = Time.get_ticks_msec() - time_now
 	if OS.is_debug_build():

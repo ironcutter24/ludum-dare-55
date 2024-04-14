@@ -1,35 +1,23 @@
-[gd_scene load_steps=18 format=3 uid="uid://xtxsu48wnn1p"]
+[gd_scene load_steps=15 format=3 uid="uid://xtxsu48wnn1p"]
 
 [ext_resource type="PackedScene" uid="uid://bq4m4s407fgvm" path="res://scenes/characters/player.tscn" id="1_2cjjq"]
 [ext_resource type="TileSet" uid="uid://caeyyuvfkxa7s" path="res://tileset.tres" id="1_k70tv"]
 [ext_resource type="Script" path="res://addons/gaea/generators/2D/walker_generator/walker_generator.gd" id="3_2o4ap"]
 [ext_resource type="Script" path="res://addons/gaea/generators/2D/walker_generator/walker_generator_settings.gd" id="4_2i0rp"]
-[ext_resource type="Script" path="res://addons/gaea/tile_info/tilemap_tile_info.gd" id="5_n5i06"]
 [ext_resource type="Script" path="res://addons/gaea/renderers/2D/tilemap_gaea_renderer.gd" id="6_jutyt"]
 [ext_resource type="Resource" uid="uid://mbni6mdjs846" path="res://tileData/generateBorder1.tres" id="6_r5d4s"]
 [ext_resource type="Resource" uid="uid://esuh3wgbx0o5" path="res://tileData/generateBorder2.tres" id="7_h5mnt"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="7_ucjay"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="8_e87oi"]
+[ext_resource type="Resource" uid="uid://dtx3i3thtdcux" path="res://tileData/floorTile.tres" id="9_abchu"]
 [ext_resource type="Theme" uid="uid://yqmay0cd53tl" path="res://ui/MetalPixel.tres" id="9_bvhi5"]
 [ext_resource type="Script" path="res://scripts/EnemyGenerator.gd" id="9_jcy3v"]
 [ext_resource type="PackedScene" uid="uid://6hdu1dpg02ao" path="res://scenes/characters/base_enemy.tscn" id="10_vkbn0"]
-[ext_resource type="Resource" uid="uid://dserwct6s4ynh" path="res://scenes/characters/characterData/FireMage.tres" id="15_avunq"]
-[ext_resource type="Resource" uid="uid://bmmaq5aif5ktb" path="res://scenes/characters/characterData/Witch.tres" id="16_fwo5l"]
-
-[sub_resource type="Resource" id="Resource_n0fo0"]
-resource_name = "Room"
-script = ExtResource("5_n5i06")
-type = 1
-tilemap_layer = 0
-terrain_set = 0
-terrain = 0
-id = "Room"
-layer = 0
 
 [sub_resource type="Resource" id="Resource_n81ih"]
 resource_name = "Settings"
 script = ExtResource("4_2i0rp")
-tile = SubResource("Resource_n0fo0")
+tile = ExtResource("9_abchu")
 fullness_check = 0
 max_tiles = 800
 constrain_world_size = false
@@ -73,7 +61,7 @@ follow_parameters/dead_zone_horizontal = 0.0
 follow_parameters/dead_zone_vertical = 0.0
 follow_parameters/viewfinder_in_play = false
 frame_preview = true
-pixel_perfect = true
+pixel_perfect = false
 limit/draw_limits = false
 limit/left = -10000000
 limit/top = -10000000
@@ -106,6 +94,7 @@ generator = NodePath("../WalkerGenerator")
 script = ExtResource("9_jcy3v")
 enemyScene = ExtResource("10_vkbn0")
 generator = NodePath("../TerrainGeneration/WalkerGenerator")
+floorTile = ExtResource("9_abchu")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -115,39 +104,6 @@ offset_bottom = 8.0
 theme = ExtResource("9_bvhi5")
 text = "Placeholder theme button"
 
-[node name="BaseEnemy" parent="." instance=ExtResource("10_vkbn0")]
-position = Vector2(38, 115)
-
-[node name="BaseUnit" parent="BaseEnemy" index="0"]
-unitData = ExtResource("15_avunq")
-
-[node name="BaseEnemy3" parent="." node_paths=PackedStringArray("baseUnit") instance=ExtResource("10_vkbn0")]
-position = Vector2(-15, 184)
-baseUnit = NodePath("../BaseEnemy/BaseUnit")
-
-[node name="BaseUnit" parent="BaseEnemy3" index="0"]
-unitData = ExtResource("15_avunq")
-
-[node name="BaseEnemy2" parent="." instance=ExtResource("10_vkbn0")]
-position = Vector2(64, 65)
-
-[node name="BaseUnit" parent="BaseEnemy2" index="0"]
-unitData = ExtResource("16_fwo5l")
-
-[node name="BaseEnemy4" parent="." node_paths=PackedStringArray("baseUnit") instance=ExtResource("10_vkbn0")]
-position = Vector2(-8, 270)
-baseUnit = NodePath("../BaseEnemy2/BaseUnit")
-
-[node name="BaseUnit" parent="BaseEnemy4" index="0"]
-unitData = ExtResource("15_avunq")
-
-[node name="BaseEnemy5" parent="." node_paths=PackedStringArray("baseUnit") instance=ExtResource("10_vkbn0")]
-position = Vector2(-12, 340)
-baseUnit = NodePath("../BaseEnemy2/BaseUnit")
+[connection signal="generation_finished" from="Controllers/TerrainGeneration/WalkerGenerator" to="Controllers/EnemyGenerator" method="generateEnemies"]
 
 [editable path="Player"]
-[editable path="BaseEnemy"]
-[editable path="BaseEnemy3"]
-[editable path="BaseEnemy2"]
-[editable path="BaseEnemy4"]
-[editable path="BaseEnemy5"]

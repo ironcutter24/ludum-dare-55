@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TilemapTileInfo" load_steps=2 format=3 uid="uid://dtx3i3thtdcux"]
+
+[ext_resource type="Script" path="res://addons/gaea/tile_info/tilemap_tile_info.gd" id="1_disbf"]
+
+[resource]
+resource_name = "Room"
+script = ExtResource("1_disbf")
+type = 1
+tilemap_layer = 0
+terrain_set = 0
+terrain = 0
+id = "Room"
+layer = 0
