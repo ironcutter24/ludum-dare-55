@@ -6,10 +6,10 @@ class_name UnitData
 @export var uniqueName: String # "var uniqueName: String" is all you need to know
 @export var controller: PackedScene # underlying scene that derives from BaseUnit
 	
-func _init(prices: Dictionary, uniqueName: String, controller: PackedScene):
-	self.prices = prices
-	self.uniqueName = uniqueName
-	self.controller = controller
+func _init(_prices: Dictionary, _uniqueName: String, _controller: PackedScene):
+	self.prices = _prices
+	self.uniqueName = _uniqueName
+	self.controller = _controller
 	
 static func getDefaultUnits() -> Array[UnitData]:
 	var skeleton = UnitData.new({

@@ -16,6 +16,6 @@ func _on_dialogic_signal(argument:String):
 	if argument == "intro_completed":
 		playerController.isEnabled = true;
 
-func _process(delta):
+func _process(_delta):
 	if has_overlapping_bodies():
 		SceneLoader.load_new_scene(dungeonScene);
