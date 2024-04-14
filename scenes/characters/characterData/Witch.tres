@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="UnitData" load_steps=3 format=3 uid="uid://bmmaq5aif5ktb"]
+[gd_resource type="Resource" script_class="UnitData" load_steps=4 format=3 uid="uid://bmmaq5aif5ktb"]
 
+[ext_resource type="Texture2D" uid="uid://bukmacbj8vux2" path="res://graphics/units/pyromancer/fireProjectileAtlasTexture.tres" id="1_d0c7o"]
 [ext_resource type="Script" path="res://scenes/characters/characterData/unitData.gd" id="1_pum56"]
 [ext_resource type="Texture2D" uid="uid://emk1ebybdyft" path="res://graphics/units/witch/witchAtlasTexture.tres" id="2_8spht"]
 
@@ -9,4 +10,8 @@ prices = Array[Resource("res://scenes/ressources/resourceData/resourceWithCount.
 uniqueName = "Witch"
 speed = 50.0
 isSwingingAttack = false
+projectileSpeed = 50.0
+projectileTexture = ExtResource("1_d0c7o")
+projectileAliveTime = 1.0
+attackRecoil = 1.0
 texture = ExtResource("2_8spht")
