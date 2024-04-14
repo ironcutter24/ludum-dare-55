@@ -1,18 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://6hdu1dpg02ao"]
+[gd_scene load_steps=3 format=3 uid="uid://6hdu1dpg02ao"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_gl5k4"]
-[ext_resource type="Texture2D" uid="uid://nvsljxe7nwwg" path="res://icon.svg" id="2_g734a"]
+[ext_resource type="PackedScene" uid="uid://41j2xcu8nw18" path="res://scenes/characters/base_unit.tscn" id="2_4r13p"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7k1pj"]
-
-[node name="BaseEnemy" type="CharacterBody2D"]
-collision_layer = 2
-collision_mask = 3
+[node name="BaseEnemy" type="Node2D" node_paths=PackedStringArray("baseUnit")]
 script = ExtResource("1_gl5k4")
+baseUnit = NodePath("BaseUnit")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_7k1pj")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_g734a")
+[node name="BaseUnit" parent="." instance=ExtResource("2_4r13p")]

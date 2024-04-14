@@ -1,9 +1,9 @@
-extends CharacterBody2D
+extends Node2D
 
-const SPEED = 25.0
 const STOP_DISTANCE = 20.0
 
 var to_player : Vector2 = Vector2.ZERO
+@export var baseUnit: BaseUnit;
 
 
 func _physics_process(delta):
@@ -16,9 +16,8 @@ func _physics_process(delta):
 	var result = space_state.intersect_ray(query)
 	
 	if result.size() == 0 && to_player.length() > STOP_DISTANCE:
-		velocity = to_player.normalized() * SPEED
+		baseUnit.setMoveDirection(to_player.normalized())
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.y = move_toward(velocity.y, 0, SPEED)
-	
-	move_and_collide(velocity * delta)
+		var moveDirection = Vector2(0,0);
+		baseUnit.setMoveDirection(moveDirection)
+
