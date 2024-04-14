@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://clsd3rx0hshw1"]
+[gd_scene load_steps=8 format=3 uid="uid://clsd3rx0hshw1"]
 
 [ext_resource type="Texture2D" uid="uid://likek32f8v4b" path="res://graphics/witch.png" id="1_086jf"]
 
@@ -6,15 +6,19 @@
 atlas = ExtResource("1_086jf")
 region = Rect2(0, 0, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_eycsc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mutnv"]
+atlas = ExtResource("1_086jf")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ced0v"]
 atlas = ExtResource("1_086jf")
 region = Rect2(16, 0, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vyd67"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vnry"]
 atlas = ExtResource("1_086jf")
 region = Rect2(32, 0, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tdcau"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_tsj07"]
 atlas = ExtResource("1_086jf")
 region = Rect2(48, 0, 16, 32)
 
@@ -23,22 +27,31 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ndcpe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eycsc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vyd67")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tdcau")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mutnv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ced0v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vnry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tsj07")
+}],
+"loop": true,
+"name": &"walk",
 "speed": 5.0
 }]
 
 [node name="AnimatedWitch" type="AnimatedSprite2D"]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_2p56s")
-autoplay = "default"
+animation = &"idle"
+autoplay = "idle"

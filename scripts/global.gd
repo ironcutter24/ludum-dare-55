@@ -23,5 +23,8 @@ func _input(event):
 func load_menu_scene():
 	get_tree().change_scene_to_file(menu_scene_path)
 
-func load_game_scene():
+func load_scene_at_path():
 	get_tree().change_scene_to_file(game_scene_path)
+
+func load_packed_scene(scene: PackedScene):
+	get_tree().change_scene_to_packed(scene)
