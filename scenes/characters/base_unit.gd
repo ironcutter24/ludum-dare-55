@@ -68,9 +68,10 @@ func InstantiateDrops():
 				var resourceSpawnDist = 10;
 				var instantiatedResource: BaseResource = resourcePrefab.instantiate();
 				instantiatedResource.resourceData = resource.resourceData;
+				get_parent().get_parent().add_child(instantiatedResource);
 				instantiatedResource.global_position = global_position + Vector2(randi_range(-resourceSpawnDist, resourceSpawnDist), randi_range(-resourceSpawnDist, resourceSpawnDist));
 				instantiatedResource.Refresh();
-				print("spawned");
+
 
 func _physics_process(_delta):
 	z_index = global_position.y;

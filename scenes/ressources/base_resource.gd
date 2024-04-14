@@ -6,5 +6,6 @@ extends CharacterBody2D
 
 func Refresh():
 	if (resourceData.texture != null):
+		
 		resourceSprite.texture = resourceData.texture;
 	
