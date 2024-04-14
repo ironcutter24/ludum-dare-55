@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scenes/ressources/resourceData/resourceWithCount.gd" id="2_l17gi"]
 [ext_resource type="Resource" uid="uid://ctendq803atda" path="res://scenes/ressources/resourceData/Bow.tres" id="3_58mvf"]
 [ext_resource type="Script" path="res://scenes/characters/characterData/unitData.gd" id="4_boqp4"]
-[ext_resource type="Texture2D" uid="uid://likek32f8v4b" path="res://graphics/witch.png" id="5_86407"]
+[ext_resource type="Texture2D" uid="uid://ct3ep7in6ev8" path="res://graphics/units/pyromancer/pyromancerAtlasTexture.tres" id="5_dx8mp"]
 
 [sub_resource type="Resource" id="Resource_jcrox"]
 script = ExtResource("2_l17gi")
@@ -22,4 +22,4 @@ prices = Array[ExtResource("2_l17gi")]([SubResource("Resource_jcrox"), SubResour
 uniqueName = "Zombie"
 speed = 40.0
 isSwingingAttack = false
-texture = ExtResource("5_86407")
+texture = ExtResource("5_dx8mp")

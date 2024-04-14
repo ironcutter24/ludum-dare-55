@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://ct3ep7in6ev8"]
+
+[ext_resource type="Texture2D" uid="uid://dc6aph6383mph" path="res://graphics/units/pyromancer/pyromancer.png" id="1_ypdw2"]
+
+[resource]
+atlas = ExtResource("1_ypdw2")
+region = Rect2(0, 0, 16, 32)

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scenes/characters/characterData/unitData.gd" id="1_n0vyd"]
 [ext_resource type="Script" path="res://scenes/ressources/resourceData/resourceWithCount.gd" id="2_2r534"]
 [ext_resource type="Resource" uid="uid://i3yxtmjtqqi7" path="res://scenes/ressources/resourceData/Sword.tres" id="3_gucc1"]
-[ext_resource type="Texture2D" uid="uid://likek32f8v4b" path="res://graphics/witch.png" id="5_17r18"]
+[ext_resource type="Texture2D" uid="uid://ct3ep7in6ev8" path="res://graphics/units/pyromancer/pyromancerAtlasTexture.tres" id="5_ihk86"]
 
 [sub_resource type="Resource" id="Resource_qxffp"]
 script = ExtResource("2_2r534")
@@ -22,4 +22,4 @@ prices = Array[ExtResource("2_2r534")]([SubResource("Resource_qxffp"), SubResour
 uniqueName = "Skeleton"
 speed = 60.0
 isSwingingAttack = false
-texture = ExtResource("5_17r18")
+texture = ExtResource("5_ihk86")
