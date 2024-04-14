@@ -10,3 +10,4 @@ leave witch
 witch (Neutral): Oh dear
 witch (Neutral): It seems I've mistaken an amet for an elit
 witch (Neutral): Looks like I've got some demons to banish in the basement
+[signal arg="intro_completed"]
