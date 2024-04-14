@@ -16,7 +16,8 @@ func generateEnemies():
 			);
 
 		var tile = generator.grid.get_value(randTile, 0);
-		if (tile == floorTile):
+		var wallTile = generator.grid.get_value(randTile, 1);
+		if (tile == floorTile and wallTile == null):
 			spawnEnemy(randTile);
 			
 func spawnEnemy(pos: Vector2i):
