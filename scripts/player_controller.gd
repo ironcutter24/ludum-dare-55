@@ -30,7 +30,7 @@ func _physics_process(delta):
 	velocity += direction * SPEED
 	velocity = velocity.lerp(Vector2.ZERO, 4 * delta)
 	
-	$AnimatedSprite2D.scale.x = 1 if velocity.x >= 0 else -1
+	$AnimatedWitch.scale.x = 1 if velocity.x >= 0 else -1
 	print(velocity.x)
 
 	move_and_slide()

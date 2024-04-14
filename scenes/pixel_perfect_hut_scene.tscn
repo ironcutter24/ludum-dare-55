@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://bniwotomm86q1"]
+
+[ext_resource type="PackedScene" uid="uid://c0hy2gpo6l6xe" path="res://scenes/witch_hut.tscn" id="2_bukuc"]
+
+[node name="PixelPerfectGameScene" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
+texture_filter = 1
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
+handle_input_locally = false
+snap_2d_transforms_to_pixel = true
+snap_2d_vertices_to_pixel = true
+size = Vector2i(288, 162)
+render_target_update_mode = 4
+
+[node name="WitchHut" parent="CanvasLayer/SubViewportContainer/SubViewport" instance=ExtResource("2_bukuc")]
