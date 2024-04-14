@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://41j2xcu8nw18"]
+[gd_scene load_steps=6 format=3 uid="uid://41j2xcu8nw18"]
 
 [ext_resource type="Script" path="res://scenes/characters/base_unit.gd" id="1_83234"]
 [ext_resource type="Resource" uid="uid://d3lthuleixkfi" path="res://scenes/characters/characterData/LeechWorm_UnitData.tres" id="2_r8c68"]
 [ext_resource type="PackedScene" uid="uid://dwlj873e5ntu8" path="res://scenes/base_projectile.tscn" id="3_ivqfo"]
+[ext_resource type="PackedScene" uid="uid://ccib4fchiw8v5" path="res://scenes/ressources/base_resource.tscn" id="4_ktl7m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dmi2q"]
 size = Vector2(10, 8)
@@ -12,6 +13,7 @@ y_sort_enabled = true
 script = ExtResource("1_83234")
 unitData = ExtResource("2_r8c68")
 projectilePrefab = ExtResource("3_ivqfo")
+resourcePrefab = ExtResource("4_ktl7m")
 healthBar = NodePath("Healthbar/ProgressBar")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

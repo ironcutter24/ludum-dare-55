@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var Health: int = 100
 @export var unitData: UnitData;
 @export var projectilePrefab: PackedScene;
+@export var resourcePrefab: PackedScene;
 
 
 var direction : Vector2
@@ -56,7 +57,18 @@ func _process(delta):
 	if (Health < 0.0):
 		if get_parent() is PlayerController:
 			Global.load_hut_scene();
+		else:
+			InstantiateDrops();
 		get_parent().queue_free();
+
+func InstantiateDrops():
+	for resource: ResourceWithCount in unitData.prices:
+		for i in range(resource.count):
+			if randf() < 0.05:
+				var instantiatedResource: BaseResource = resourcePrefab.instantiate();
+				instantiatedResource.resourceData = resource.resourceData;
+				
+		
 
 func _physics_process(_delta):
 	z_index = global_position.y;

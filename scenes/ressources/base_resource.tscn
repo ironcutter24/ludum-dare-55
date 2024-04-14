@@ -1,15 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://ccib4fchiw8v5"]
+[gd_scene load_steps=5 format=3 uid="uid://ccib4fchiw8v5"]
 
 [ext_resource type="Script" path="res://scenes/ressources/base_resource.gd" id="1_q8fia"]
 [ext_resource type="Texture2D" uid="uid://nvsljxe7nwwg" path="res://icon.svg" id="2_85tft"]
+[ext_resource type="Resource" uid="uid://cmsa8uf0wqh8g" path="res://scenes/ressources/resourceData/Bone.tres" id="2_a535y"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3pyu"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_pqjsb"]
+radius = 17.0
 
-[node name="BaseRessource" type="CharacterBody2D"]
+[node name="BaseRessource" type="CharacterBody2D" node_paths=PackedStringArray("resourceSprite")]
+collision_layer = 0
+collision_mask = 16
 script = ExtResource("1_q8fia")
+resourceSprite = NodePath("Sprite2D")
+resourceData = ExtResource("2_a535y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_a3pyu")
+shape = SubResource("CircleShape2D_pqjsb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.1, 0.1)
