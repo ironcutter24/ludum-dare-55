@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ludum-dare-55"
-run/main_scene="res://scenes/pixel_perfect_game_scene.tscn"
+run/main_scene="res://scenes/empty_start_scene.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Global="*res://scenes/global.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 StoryProgress="*res://scenes/storyProgress.tscn"
+SceneLoader="*res://scenes/scene_loader.tscn"
 
 [dialogic]
 

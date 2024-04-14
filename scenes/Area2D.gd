@@ -2,6 +2,7 @@ extends Area2D
 
 @export var portal: Node;
 @export var playerController: PlayerController
+@export var dungeonScene: PackedScene;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,4 +15,7 @@ func _on_dialogic_signal(argument:String):
 		portal.visible = true;
 	if argument == "intro_completed":
 		playerController.isEnabled = true;
-		
+
+func _process(delta):
+	if has_overlapping_bodies():
+		SceneLoader.load_new_scene(dungeonScene);

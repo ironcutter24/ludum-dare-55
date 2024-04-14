@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c0hy2gpo6l6xe"]
+[gd_scene load_steps=23 format=3 uid="uid://c0hy2gpo6l6xe"]
 
 [ext_resource type="TileSet" uid="uid://caeyyuvfkxa7s" path="res://scenes/tileset.tres" id="1_ktxnb"]
 [ext_resource type="Script" path="res://addons/gaea/generators/2D/cellular_generator/cellular_generator.gd" id="2_1t8ax"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://addons/gaea/tile_info/tilemap_tile_info.gd" id="4_6pgl3"]
 [ext_resource type="Script" path="res://scenes/Area2D.gd" id="4_lneuq"]
 [ext_resource type="Script" path="res://addons/gaea/renderers/2D/tilemap_gaea_renderer.gd" id="5_tyapg"]
+[ext_resource type="PackedScene" uid="uid://vt7ykyq87kok" path="res://scenes/pixel_perfect_game_scene.tscn" id="5_xsgyf"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="7_x8330"]
 [ext_resource type="PackedScene" uid="uid://clsd3rx0hshw1" path="res://scenes/animated_witch.tscn" id="9_7ppio"]
 
@@ -100,18 +101,19 @@ position = Vector2(0, -9)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HutCenter/CharacterBody2D"]
 shape = SubResource("CircleShape2D_tkp6g")
 
-[node name="Area2D" type="Area2D" parent="HutCenter" node_paths=PackedStringArray("portal", "playerController")]
+[node name="PortalArea2D" type="Area2D" parent="HutCenter" node_paths=PackedStringArray("portal", "playerController")]
 script = ExtResource("4_lneuq")
 portal = NodePath("AnimatedPortal")
 playerController = NodePath("../CharacterBody2D")
+dungeonScene = ExtResource("5_xsgyf")
 
-[node name="AnimatedPortal" type="AnimatedSprite2D" parent="HutCenter/Area2D"]
+[node name="AnimatedPortal" type="AnimatedSprite2D" parent="HutCenter/PortalArea2D"]
 visible = false
 sprite_frames = SubResource("SpriteFrames_ys2w6")
 autoplay = "default"
 frame_progress = 0.149861
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HutCenter/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HutCenter/PortalArea2D"]
 shape = SubResource("CircleShape2D_43cc0")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -165,3 +167,5 @@ limit/smoothed = false
 tween_parameters = null
 tween_on_load = false
 inactive_update_mode = 0
+
+[connection signal="area_entered" from="HutCenter/PortalArea2D" to="HutCenter/PortalArea2D" method="_on_area_entered"]
