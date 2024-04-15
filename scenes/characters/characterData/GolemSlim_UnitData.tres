@@ -17,15 +17,15 @@ region = Rect2(133, 167, 10, 3)
 
 [resource]
 script = ExtResource("3_t42ps")
-prices = Array[ExtResource("2_4y0ha")]([SubResource("Resource_bd8vr")])
 uniqueName = "Golem Slim"
+spriteFrames = ExtResource("4_aevt0")
+prices = Array[ExtResource("2_4y0ha")]([SubResource("Resource_bd8vr")])
+health = 20
 speed = 40.0
 isSwingingAttack = false
-projectileSpeed = 50.0
-projectileTextures = Array[AtlasTexture]([SubResource("AtlasTexture_olff4")])
-projectileAliveTime = 1.0
-projectileDamage = 10
-health = 20
-bulletsPierce = false
 attackRecoil = 1.0
-spriteFrames = ExtResource("4_aevt0")
+projectileTextures = Array[AtlasTexture]([SubResource("AtlasTexture_olff4")])
+projectileDamage = 10
+projectileSpeed = 50.0
+projectileAliveTime = 1.0
+bulletsPierce = false

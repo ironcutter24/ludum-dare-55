@@ -17,15 +17,15 @@ region = Rect2(130, 65, 13, 3)
 
 [resource]
 script = ExtResource("3_rags8")
-prices = Array[ExtResource("2_oix2d")]([SubResource("Resource_bd8vr")])
 uniqueName = "Archer"
+spriteFrames = ExtResource("4_in11v")
+prices = Array[ExtResource("2_oix2d")]([SubResource("Resource_bd8vr")])
+health = 20
 speed = 40.0
 isSwingingAttack = false
-projectileSpeed = 50.0
+attackRecoil = 4.0
 projectileTextures = Array[AtlasTexture]([SubResource("AtlasTexture_mbwdq")])
-projectileAliveTime = 1.0
 projectileDamage = 10
-health = 20
-bulletsPierce = false
-attackRecoil = 1.0
-spriteFrames = ExtResource("4_in11v")
+projectileSpeed = 140.0
+projectileAliveTime = 2.0
+bulletsPierce = true

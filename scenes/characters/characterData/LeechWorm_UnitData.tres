@@ -23,15 +23,15 @@ region = Rect2(130, 135, 10, 4)
 
 [resource]
 script = ExtResource("3_63lep")
-prices = Array[ExtResource("2_ffin0")]([SubResource("Resource_jcrox"), SubResource("Resource_dtpnv")])
 uniqueName = "Leech Worm"
+spriteFrames = ExtResource("5_y0y86")
+prices = Array[ExtResource("2_ffin0")]([SubResource("Resource_jcrox"), SubResource("Resource_dtpnv")])
+health = 20
 speed = 40.0
 isSwingingAttack = false
-projectileSpeed = 50.0
-projectileTextures = Array[AtlasTexture]([SubResource("AtlasTexture_4g5n1")])
-projectileAliveTime = 1.0
-projectileDamage = 10
-health = 20
-bulletsPierce = false
 attackRecoil = 1.0
-spriteFrames = ExtResource("5_y0y86")
+projectileTextures = Array[AtlasTexture]([SubResource("AtlasTexture_4g5n1")])
+projectileDamage = 10
+projectileSpeed = 70.0
+projectileAliveTime = 1.6
+bulletsPierce = false

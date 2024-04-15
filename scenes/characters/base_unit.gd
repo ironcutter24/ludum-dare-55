@@ -5,8 +5,8 @@ extends CharacterBody2D
 @export var unitData: UnitData;
 @export var projectilePrefab: PackedScene;
 @export var resourcePrefab: PackedScene;
-
 @export var speed_multiplier: float = 1.0
+@export var healthBar: ProgressBar
 
 var direction : Vector2
 var is_flipped = false
@@ -14,7 +14,6 @@ var recoilTimer = 0.0;
 
 @onready var targetPosition: Vector2 = global_position
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
-@export var healthBar: ProgressBar
 
 
 func _ready():
@@ -41,7 +40,7 @@ func _attack():
 		inst.unitData = unitData;
 		inst.refresh();
 		get_parent().add_child(inst);
-		inst.global_position = global_position;
+		inst.global_position = global_position + Vector2.UP * 16;
 		inst.isPlayerBullet = !(get_parent() is BaseEnemy)
 
 	recoilTimer = unitData.attackRecoil;
@@ -70,7 +69,6 @@ func InstantiateDrops():
 				instantiatedResource.Refresh();
 
 func _physics_process(_delta):
-	z_index = roundi(global_position.y);
 	recoilTimer -= _delta;
 	if direction.length() > 0:
 		velocity = direction * unitData.speed * speed_multiplier;

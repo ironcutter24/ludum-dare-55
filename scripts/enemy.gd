@@ -11,7 +11,6 @@ func setUnitData(_unitData: UnitData):
 	baseUnit.setUnitData(_unitData);
 	
 func _physics_process(_delta):
-	
 	var space_state = get_world_2d().direct_space_state
 	# use global coordinates, not local to node
 	var query = PhysicsRayQueryParameters2D.create(baseUnit.global_position, Global.player_controller.global_position, Global.WALL_MASK)

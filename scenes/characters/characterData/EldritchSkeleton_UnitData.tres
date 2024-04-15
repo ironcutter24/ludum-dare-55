@@ -18,15 +18,15 @@ count = 1
 
 [resource]
 script = ExtResource("3_d3o50")
-prices = Array[ExtResource("2_nrnw3")]([SubResource("Resource_qxffp"), SubResource("Resource_uofob")])
 uniqueName = "Eldritch Skeleton"
+spriteFrames = ExtResource("5_8exy0")
+prices = Array[ExtResource("2_nrnw3")]([SubResource("Resource_qxffp"), SubResource("Resource_uofob")])
+health = 20
 speed = 60.0
 isSwingingAttack = false
-projectileSpeed = 50.0
-projectileTextures = Array[AtlasTexture]([])
-projectileAliveTime = 1.0
-projectileDamage = 10
-health = 20
-bulletsPierce = false
 attackRecoil = 1.0
-spriteFrames = ExtResource("5_8exy0")
+projectileTextures = Array[AtlasTexture]([])
+projectileDamage = 10
+projectileSpeed = 50.0
+projectileAliveTime = 1.0
+bulletsPierce = false

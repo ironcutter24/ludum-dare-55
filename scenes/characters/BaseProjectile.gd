@@ -32,3 +32,5 @@ func _physics_process(delta):
 				body.apply_damage(unitData.projectileDamage);
 				if !unitData.bulletsPierce:
 					queue_free();
+		else:
+			queue_free();
