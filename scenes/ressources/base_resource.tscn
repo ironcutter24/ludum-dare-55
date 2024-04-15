@@ -7,7 +7,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_pqjsb"]
 radius = 17.0
 
-[node name="BaseRessource" type="CharacterBody2D" node_paths=PackedStringArray("resourceSprite")]
+[node name="BaseRessource" type="Area2D" node_paths=PackedStringArray("resourceSprite")]
 collision_layer = 0
 collision_mask = 16
 script = ExtResource("1_q8fia")
@@ -18,5 +18,4 @@ resourceData = ExtResource("2_a535y")
 shape = SubResource("CircleShape2D_pqjsb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_85tft")

@@ -51,12 +51,14 @@ func _ready():
 		
 	refreshInventory();
 		
+
 	# Add each resource to the player's inventory with count 0
-	for resource in Resources:
-		var resourceWithCount := ResourceWithCount.new();
-		resourceWithCount.count = 0;
-		resourceWithCount.resourceData = resource;
-		Global.playerResources.push_back(resourceWithCount);
+	if Global.playerResources.size() == 0:
+		for resource in Resources:
+			var resourceWithCount := ResourceWithCount.new();
+			resourceWithCount.count = 0;
+			resourceWithCount.resourceData = resource;
+			Global.playerResources.push_back(resourceWithCount);
 
 func _process(_delta):
 	refreshInventory()

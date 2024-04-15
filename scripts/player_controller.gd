@@ -23,3 +23,8 @@ func _physics_process(_delta):
 		direction.y = Input.get_axis("move_up", "move_down")
 		baseUnit.setMoveDirection(direction);
 		baseUnit.setTargetPosition(get_global_mouse_position());
+		
+func _ready():
+	if (Global.playerUnit != null):
+		baseUnit.setUnitData(Global.playerUnit);
+
