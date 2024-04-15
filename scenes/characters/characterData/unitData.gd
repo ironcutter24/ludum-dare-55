@@ -9,6 +9,8 @@ class_name UnitData
 @export var speed: float;
 @export var isSwingingAttack: bool = false;
 @export var attackRecoil: float = 1.0;
+@export var bulletDirectionVariation := 0.0;
+@export var numberOfBullets := 1;
 
 @export_group("Projectiles")
 @export var projectileTextures: Array[AtlasTexture]
