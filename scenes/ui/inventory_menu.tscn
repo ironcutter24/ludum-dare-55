@@ -8,10 +8,10 @@
 [ext_resource type="Resource" uid="uid://d3lthuleixkfi" path="res://scenes/characters/characterData/LeechWorm_UnitData.tres" id="6_vano0"]
 [ext_resource type="Resource" uid="uid://c7vuwmhx7huid" path="res://scenes/characters/characterData/Pyromancer_UnitData.tres" id="7_j3bhy"]
 [ext_resource type="Resource" uid="uid://cmsa8uf0wqh8g" path="res://scenes/ressources/resourceData/Bone_ResourceData.tres" id="8_cehqp"]
+[ext_resource type="Resource" uid="uid://bpx81jiawigl" path="res://scenes/ressources/resourceData/ArcaneStone_ResourceData.tres" id="8_e1v1g"]
 [ext_resource type="Resource" uid="uid://ctendq803atda" path="res://scenes/ressources/resourceData/Chalice_ResourceData.tres" id="9_i7cnr"]
 [ext_resource type="Resource" uid="uid://dp24en2ndrbj" path="res://scenes/ressources/resourceData/Goo_ResourceData.tres" id="10_6je4x"]
-[ext_resource type="Resource" uid="uid://75bby780bp7k" path="res://scenes/ressources/resourceData/Meat_ResourceData.tres" id="11_yo7s5"]
-[ext_resource type="Resource" uid="uid://i3yxtmjtqqi7" path="res://scenes/ressources/resourceData/Sword.tres" id="12_eyduy"]
+[ext_resource type="Resource" uid="uid://cx1pgpw5risph" path="res://scenes/ressources/resourceData/FireStone_ResourceData.tres" id="11_uk4j2"]
 [ext_resource type="PackedScene" uid="uid://b4wfw7qxb5672" path="res://scenes/ui/spawn_unit_button.tscn" id="13_0o2wf"]
 [ext_resource type="PackedScene" uid="uid://dia1pf7g5yerl" path="res://scenes/ui/resource_with_count_ui.tscn" id="14_occ4x"]
 
@@ -24,7 +24,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_o57mh")
 Units = Array[Resource("res://scenes/characters/characterData/unitData.gd")]([ExtResource("2_spv1q"), ExtResource("3_ytvis"), ExtResource("4_30d6r"), ExtResource("5_07nnh"), ExtResource("6_vano0"), ExtResource("7_j3bhy")])
-Resources = Array[Resource("res://scenes/ressources/resourceData/resourceData.gd")]([ExtResource("8_cehqp"), ExtResource("9_i7cnr"), ExtResource("10_6je4x"), ExtResource("11_yo7s5"), ExtResource("12_eyduy")])
+Resources = Array[Resource("res://scenes/ressources/resourceData/resourceData.gd")]([ExtResource("8_e1v1g"), ExtResource("8_cehqp"), ExtResource("9_i7cnr"), ExtResource("11_uk4j2"), ExtResource("10_6je4x")])
 spawnButtons = NodePath("SpawnButtons")
 inventoryList = NodePath("Inventory")
 spawnButtonPrefab = ExtResource("13_0o2wf")
