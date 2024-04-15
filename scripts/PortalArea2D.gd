@@ -10,8 +10,6 @@ func _ready():
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	if (StoryProgress.hasCreatedPortal):
 		portal.visible = true;
-	if (StoryProgress.isIntroCompleted and StoryProgress.hasDiedOnce and StoryProgress.finishedSpawnTutorial):
-		playerController.isEnabled = true;
  
 func _on_dialogic_signal(argument:String):
 	if argument == "shake":
@@ -21,7 +19,6 @@ func _on_dialogic_signal(argument:String):
 		StoryProgress.isIntroCompleted = true;
 		playerController.isEnabled = true;
 	if argument == "finished_spawn_tutorial":
-		playerController.isEnabled = true;
 		StoryProgress.finishedSpawnTutorial = true;
 	print("got dialogic signal")
 

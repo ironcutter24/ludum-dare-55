@@ -195,7 +195,7 @@ top_level = true
 position = Vector2(1512, 1288)
 
 [node name="Player" parent="HutCenter" instance=ExtResource("2_48ett")]
-position = Vector2(-33, -12)
+position = Vector2(-33, 12)
 isEnabled = false
 
 [node name="BaseUnit" parent="HutCenter/Player" index="0"]
