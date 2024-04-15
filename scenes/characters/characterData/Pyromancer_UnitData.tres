@@ -1,15 +1,15 @@
 [gd_resource type="Resource" script_class="UnitData" load_steps=10 format=3 uid="uid://c7vuwmhx7huid"]
 
-[ext_resource type="Resource" uid="uid://75bby780bp7k" path="res://scenes/ressources/resourceData/Meat.tres" id="1_lm34t"]
+[ext_resource type="Resource" uid="uid://dha18xrou01o4" path="res://scenes/ressources/resourceData/FireStone_ResourceData.tres" id="1_yjgj4"]
 [ext_resource type="Script" path="res://scenes/ressources/resourceData/resourceWithCount.gd" id="2_8avdy"]
 [ext_resource type="Script" path="res://scenes/characters/characterData/unitData.gd" id="3_7vtgq"]
 [ext_resource type="Texture2D" uid="uid://ctay48u4d20mm" path="res://graphics/units/warriors.png" id="4_jafbw"]
 [ext_resource type="SpriteFrames" uid="uid://pjf8wres2uhc" path="res://graphics/animations/Pyromancer_SpriteFrames.tres" id="4_m6ink"]
 
-[sub_resource type="Resource" id="Resource_bd8vr"]
+[sub_resource type="Resource" id="Resource_q3ys3"]
 script = ExtResource("2_8avdy")
-resourceData = ExtResource("1_lm34t")
-count = 16
+resourceData = ExtResource("1_yjgj4")
+count = 1
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j7aap"]
 atlas = ExtResource("4_jafbw")
@@ -27,7 +27,7 @@ region = Rect2(136, 43, 3, 3)
 script = ExtResource("3_7vtgq")
 uniqueName = "Pyromancer"
 spriteFrames = ExtResource("4_m6ink")
-prices = Array[ExtResource("2_8avdy")]([SubResource("Resource_bd8vr")])
+drops = Array[ExtResource("2_8avdy")]([SubResource("Resource_q3ys3")])
 health = 20
 speed = 30.0
 isSwingingAttack = false

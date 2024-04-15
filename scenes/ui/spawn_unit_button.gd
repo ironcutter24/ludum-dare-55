@@ -14,9 +14,9 @@ func setUnit(_unit: UnitData):
 	unitData = _unit;
 	animatedSprite.sprite_frames = unitData.spriteFrames;
 	textLabel.text = unitData.uniqueName;
-	for i in range(unitData.prices.size()):
+	for i in range(unitData.drops.size()):
 		itemsWithCount[i].visible = true;
-		itemsWithCount[i].setResourceWithCount(unitData.prices[i]);
+		itemsWithCount[i].setResourceWithCount(unitData.drops[i]);
 	
 func _on_pressed():
 	pass # Replace with function body.

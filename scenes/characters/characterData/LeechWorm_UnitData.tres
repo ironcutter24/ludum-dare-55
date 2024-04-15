@@ -1,20 +1,14 @@
-[gd_resource type="Resource" script_class="UnitData" load_steps=10 format=3 uid="uid://d3lthuleixkfi"]
+[gd_resource type="Resource" script_class="UnitData" load_steps=8 format=3 uid="uid://d3lthuleixkfi"]
 
-[ext_resource type="Resource" uid="uid://75bby780bp7k" path="res://scenes/ressources/resourceData/Meat.tres" id="1_8aahf"]
+[ext_resource type="Resource" uid="uid://dp24en2ndrbj" path="res://scenes/ressources/resourceData/Goo_ResourceData.tres" id="1_eg7lp"]
 [ext_resource type="Script" path="res://scenes/ressources/resourceData/resourceWithCount.gd" id="2_ffin0"]
 [ext_resource type="Script" path="res://scenes/characters/characterData/unitData.gd" id="3_63lep"]
-[ext_resource type="Resource" uid="uid://ctendq803atda" path="res://scenes/ressources/resourceData/Bow.tres" id="3_wvrsf"]
 [ext_resource type="Texture2D" uid="uid://ctay48u4d20mm" path="res://graphics/units/warriors.png" id="4_eeypk"]
 [ext_resource type="SpriteFrames" uid="uid://ctipkivh2wnlj" path="res://graphics/animations/LeechWorm_SpriteFrames.tres" id="5_y0y86"]
 
-[sub_resource type="Resource" id="Resource_jcrox"]
+[sub_resource type="Resource" id="Resource_gb781"]
 script = ExtResource("2_ffin0")
-resourceData = ExtResource("1_8aahf")
-count = 4
-
-[sub_resource type="Resource" id="Resource_dtpnv"]
-script = ExtResource("2_ffin0")
-resourceData = ExtResource("3_wvrsf")
+resourceData = ExtResource("1_eg7lp")
 count = 1
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4g5n1"]
@@ -25,7 +19,7 @@ region = Rect2(130, 135, 10, 4)
 script = ExtResource("3_63lep")
 uniqueName = "Leech Worm"
 spriteFrames = ExtResource("5_y0y86")
-prices = Array[ExtResource("2_ffin0")]([SubResource("Resource_jcrox"), SubResource("Resource_dtpnv")])
+drops = Array[ExtResource("2_ffin0")]([SubResource("Resource_gb781")])
 health = 20
 speed = 40.0
 isSwingingAttack = false

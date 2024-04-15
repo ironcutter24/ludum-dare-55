@@ -1,15 +1,15 @@
 [gd_resource type="Resource" script_class="UnitData" load_steps=8 format=3 uid="uid://xfcfv714tytc"]
 
-[ext_resource type="Resource" uid="uid://75bby780bp7k" path="res://scenes/ressources/resourceData/Meat.tres" id="1_2n7v0"]
+[ext_resource type="Resource" uid="uid://ctendq803atda" path="res://scenes/ressources/resourceData/Chalice_ResourceData.tres" id="1_pr661"]
 [ext_resource type="Script" path="res://scenes/ressources/resourceData/resourceWithCount.gd" id="2_oix2d"]
 [ext_resource type="Texture2D" uid="uid://ctay48u4d20mm" path="res://graphics/units/warriors.png" id="3_gsgw5"]
 [ext_resource type="Script" path="res://scenes/characters/characterData/unitData.gd" id="3_rags8"]
 [ext_resource type="SpriteFrames" uid="uid://nu5a120ip535" path="res://graphics/animations/Archer_SpriteFrames.tres" id="4_in11v"]
 
-[sub_resource type="Resource" id="Resource_bd8vr"]
+[sub_resource type="Resource" id="Resource_xhcli"]
 script = ExtResource("2_oix2d")
-resourceData = ExtResource("1_2n7v0")
-count = 16
+resourceData = ExtResource("1_pr661")
+count = 1
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mbwdq"]
 atlas = ExtResource("3_gsgw5")
@@ -19,7 +19,7 @@ region = Rect2(130, 65, 13, 3)
 script = ExtResource("3_rags8")
 uniqueName = "Archer"
 spriteFrames = ExtResource("4_in11v")
-prices = Array[ExtResource("2_oix2d")]([SubResource("Resource_bd8vr")])
+drops = Array[ExtResource("2_oix2d")]([SubResource("Resource_xhcli")])
 health = 20
 speed = 40.0
 isSwingingAttack = false

@@ -2,9 +2,9 @@ extends Resource
 class_name UnitData
 
 
-@export var uniqueName: String # "var uniqueName: String" is all you need to know
+@export var uniqueName: String  # "var uniqueName: String" is all you need to know
 @export var spriteFrames: SpriteFrames;
-@export var prices: Array[ResourceWithCount]
+@export var drops: Array[ResourceWithCount]
 @export var health = 20;
 @export var speed: float;
 @export var isSwingingAttack: bool = false;

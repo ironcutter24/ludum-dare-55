@@ -1,26 +1,20 @@
-[gd_resource type="Resource" script_class="UnitData" load_steps=8 format=3 uid="uid://b7rsmdkxd0ggf"]
+[gd_resource type="Resource" script_class="UnitData" load_steps=6 format=3 uid="uid://b7rsmdkxd0ggf"]
 
-[ext_resource type="Resource" uid="uid://cmsa8uf0wqh8g" path="res://scenes/ressources/resourceData/Bone.tres" id="1_o55su"]
+[ext_resource type="Resource" uid="uid://cmsa8uf0wqh8g" path="res://scenes/ressources/resourceData/Bone_ResourceData.tres" id="1_3l7aj"]
 [ext_resource type="Script" path="res://scenes/ressources/resourceData/resourceWithCount.gd" id="2_nrnw3"]
 [ext_resource type="Script" path="res://scenes/characters/characterData/unitData.gd" id="3_d3o50"]
-[ext_resource type="Resource" uid="uid://i3yxtmjtqqi7" path="res://scenes/ressources/resourceData/Sword.tres" id="3_q5i0r"]
 [ext_resource type="SpriteFrames" uid="uid://cf6d275wlxpri" path="res://graphics/animations/EldritchSkeleton_SpriteFrames.tres" id="5_8exy0"]
 
-[sub_resource type="Resource" id="Resource_qxffp"]
+[sub_resource type="Resource" id="Resource_randm"]
 script = ExtResource("2_nrnw3")
-resourceData = ExtResource("1_o55su")
-count = 4
-
-[sub_resource type="Resource" id="Resource_uofob"]
-script = ExtResource("2_nrnw3")
-resourceData = ExtResource("3_q5i0r")
+resourceData = ExtResource("1_3l7aj")
 count = 1
 
 [resource]
 script = ExtResource("3_d3o50")
 uniqueName = "Eldritch Skeleton"
 spriteFrames = ExtResource("5_8exy0")
-prices = Array[ExtResource("2_nrnw3")]([SubResource("Resource_qxffp"), SubResource("Resource_uofob")])
+drops = Array[ExtResource("2_nrnw3")]([SubResource("Resource_randm")])
 health = 20
 speed = 60.0
 isSwingingAttack = false

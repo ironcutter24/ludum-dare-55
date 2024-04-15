@@ -1,7 +1,0 @@
-[gd_resource type="Resource" script_class="RessourceData" load_steps=2 format=3 uid="uid://dp24en2ndrbj"]
-
-[ext_resource type="Script" path="res://scenes/ressources/resourceData/resourceData.gd" id="1_ts5jf"]
-
-[resource]
-script = ExtResource("1_ts5jf")
-uniqueName = "Magic Staff"

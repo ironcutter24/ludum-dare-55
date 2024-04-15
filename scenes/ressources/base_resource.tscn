@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/ressources/base_resource.gd" id="1_q8fia"]
 [ext_resource type="Texture2D" uid="uid://nvsljxe7nwwg" path="res://icon.svg" id="2_85tft"]
-[ext_resource type="Resource" uid="uid://cmsa8uf0wqh8g" path="res://scenes/ressources/resourceData/Bone.tres" id="2_a535y"]
+[ext_resource type="Resource" uid="uid://cmsa8uf0wqh8g" path="res://scenes/ressources/resourceData/Bone_ResourceData.tres" id="2_a535y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pqjsb"]
 radius = 17.0

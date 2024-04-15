@@ -5,15 +5,15 @@
 
 [resource]
 script = ExtResource("1_w6oo2")
-prices = Array[Resource("res://scenes/ressources/resourceData/resourceWithCount.gd")]([])
 uniqueName = "Witch"
+spriteFrames = ExtResource("2_acvhg")
+drops = Array[Resource("res://scenes/ressources/resourceData/resourceWithCount.gd")]([])
+health = 20
 speed = 50.0
 isSwingingAttack = false
-projectileSpeed = 50.0
-projectileTextures = Array[AtlasTexture]([])
-projectileAliveTime = 1.0
-projectileDamage = 10
-health = 20
-bulletsPierce = false
 attackRecoil = 1.0
-spriteFrames = ExtResource("2_acvhg")
+projectileTextures = Array[AtlasTexture]([])
+projectileDamage = 10
+projectileSpeed = 50.0
+projectileAliveTime = 1.0
+bulletsPierce = false

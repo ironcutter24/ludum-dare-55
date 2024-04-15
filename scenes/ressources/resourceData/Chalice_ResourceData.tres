@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="RessourceData" load_steps=4 format=3 uid="uid://ctendq803atda"]
+
+[ext_resource type="Script" path="res://scenes/ressources/resourceData/resourceData.gd" id="1_g6d85"]
+[ext_resource type="Texture2D" uid="uid://cfpm0l14aqxk3" path="res://graphics/resources.png" id="2_tobof"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_inq0a"]
+atlas = ExtResource("2_tobof")
+region = Rect2(32, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_g6d85")
+uniqueName = "Chalice"
+texture = SubResource("AtlasTexture_inq0a")

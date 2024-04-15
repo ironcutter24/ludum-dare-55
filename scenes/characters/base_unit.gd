@@ -27,11 +27,11 @@ func setUnitData(_unitData: UnitData):
 
 func setTargetPosition(pos: Vector2):
 	targetPosition = pos;
-	
+
 func TryAttack():
 	if (recoilTimer <= 0):
 		_attack();
-		
+
 func _attack():
 	if (unitData.projectileTextures.size() > 0):
 		var inst = projectilePrefab.instantiate() as BaseProjectile;
@@ -42,7 +42,7 @@ func _attack():
 		get_parent().add_child(inst);
 		inst.global_position = global_position + Vector2.UP * 16;
 		inst.isPlayerBullet = !(get_parent() is BaseEnemy)
-
+	
 	recoilTimer = unitData.attackRecoil;
 
 func setMoveDirection(dir: Vector2):

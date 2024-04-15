@@ -1,15 +1,15 @@
 [gd_resource type="Resource" script_class="UnitData" load_steps=8 format=3 uid="uid://b5lq16gs61htq"]
 
-[ext_resource type="Resource" uid="uid://75bby780bp7k" path="res://scenes/ressources/resourceData/Meat.tres" id="1_wy733"]
+[ext_resource type="Resource" uid="uid://cr83hkm1ebb5d" path="res://scenes/ressources/resourceData/ArcaneStone_ResourceData.tres" id="1_4u8by"]
 [ext_resource type="Script" path="res://scenes/ressources/resourceData/resourceWithCount.gd" id="2_jpejn"]
 [ext_resource type="Texture2D" uid="uid://ctay48u4d20mm" path="res://graphics/units/warriors.png" id="3_jasn6"]
 [ext_resource type="Script" path="res://scenes/characters/characterData/unitData.gd" id="3_y2oj3"]
 [ext_resource type="SpriteFrames" uid="uid://cyyxexeug0gg1" path="res://graphics/animations/GolemBig_SpriteFrames.tres" id="4_psyrk"]
 
-[sub_resource type="Resource" id="Resource_bd8vr"]
+[sub_resource type="Resource" id="Resource_o8ui4"]
 script = ExtResource("2_jpejn")
-resourceData = ExtResource("1_wy733")
-count = 16
+resourceData = ExtResource("1_4u8by")
+count = 1
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h2rxt"]
 atlas = ExtResource("3_jasn6")
@@ -19,7 +19,7 @@ region = Rect2(133, 198, 5, 4)
 script = ExtResource("3_y2oj3")
 uniqueName = "Golem Big"
 spriteFrames = ExtResource("4_psyrk")
-prices = Array[ExtResource("2_jpejn")]([SubResource("Resource_bd8vr")])
+drops = Array[ExtResource("2_jpejn")]([SubResource("Resource_o8ui4")])
 health = 20
 speed = 40.0
 isSwingingAttack = false
