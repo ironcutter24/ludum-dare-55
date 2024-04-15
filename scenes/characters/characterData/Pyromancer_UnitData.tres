@@ -14,7 +14,7 @@ count = 16
 [resource]
 script = ExtResource("3_7vtgq")
 prices = Array[ExtResource("2_8avdy")]([SubResource("Resource_bd8vr")])
-uniqueName = "Brawler"
+uniqueName = "Pyromancer"
 speed = 40.0
 isSwingingAttack = false
 projectileSpeed = 75.0

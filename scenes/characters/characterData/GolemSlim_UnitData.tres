@@ -13,7 +13,7 @@ count = 16
 [resource]
 script = ExtResource("3_t42ps")
 prices = Array[ExtResource("2_4y0ha")]([SubResource("Resource_bd8vr")])
-uniqueName = "Brawler"
+uniqueName = "Golem Slim"
 speed = 40.0
 isSwingingAttack = false
 projectileSpeed = 50.0

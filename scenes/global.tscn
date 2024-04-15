@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bo5fba0w57vas"]
 
-[ext_resource type="Script" path="res://scripts/global.gd" id="1_0ll6k"]
+[ext_resource type="Script" path="res://scripts/autoloads/global.gd" id="1_0ll6k"]
 [ext_resource type="PackedScene" uid="uid://bniwotomm86q1" path="res://scenes/pixel_perfect_hut_scene.tscn" id="2_y7xvm"]
 
 [node name="Global" type="Node"]

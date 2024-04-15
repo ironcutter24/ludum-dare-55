@@ -19,7 +19,7 @@ count = 1
 [resource]
 script = ExtResource("3_63lep")
 prices = Array[ExtResource("2_ffin0")]([SubResource("Resource_jcrox"), SubResource("Resource_dtpnv")])
-uniqueName = "Zombie"
+uniqueName = "Leech Worm"
 speed = 40.0
 isSwingingAttack = false
 projectileSpeed = 50.0
