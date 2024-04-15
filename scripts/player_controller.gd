@@ -13,9 +13,8 @@ func _enter_tree():
 func _exit_tree():
 	Global.player_controller = null
 
-func _input(event):
-	# Interaction
-	if event.is_action("attack") and isEnabled:
+func _process(delta):
+	if Input.is_action_pressed("attack") and isEnabled:
 		baseUnit.TryAttack()
 
 func _physics_process(_delta):

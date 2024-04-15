@@ -42,6 +42,9 @@ y_sort_enabled = true
 [node name="Player" parent="YSortedItems" instance=ExtResource("1_2cjjq")]
 y_sort_enabled = true
 
+[node name="BaseUnit" parent="YSortedItems/Player" index="0"]
+unitData = ExtResource("18_2yolu")
+
 [node name="Camera2D" type="Camera2D" parent="YSortedItems/Player/BaseUnit" index="2"]
 zoom = Vector2(4, 4)
 
