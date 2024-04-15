@@ -52,6 +52,7 @@ func apply_damage(value: int):
 	healthBar.value = max(0, healthBar.value - value)
 	if (healthBar.value <= 0):
 		if get_parent() is PlayerController:
+			StoryProgress.hasDiedOnce = true;
 			Global.load_hut_scene();
 		else:
 			InstantiateDrops();

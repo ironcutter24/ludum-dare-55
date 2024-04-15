@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://c0hy2gpo6l6xe"]
+[gd_scene load_steps=20 format=3 uid="uid://c0hy2gpo6l6xe"]
 
 [ext_resource type="Script" path="res://addons/gaea/generators/2D/cellular_generator/cellular_generator.gd" id="2_1t8ax"]
 [ext_resource type="PackedScene" uid="uid://bq4m4s407fgvm" path="res://scenes/characters/player.tscn" id="2_48ett"]
 [ext_resource type="Script" path="res://addons/gaea/generators/2D/cellular_generator/cellular_generator_settings.gd" id="3_6ila3"]
+[ext_resource type="Resource" uid="uid://bmmaq5aif5ktb" path="res://scenes/characters/characterData/Witch_UnitData.tres" id="3_k2d7t"]
 [ext_resource type="Texture2D" uid="uid://qmbpmbw8f533" path="res://graphics/TempTerrain.png" id="3_uyyhi"]
 [ext_resource type="Script" path="res://scripts/PortalArea2D.gd" id="3_w852g"]
 [ext_resource type="Script" path="res://addons/gaea/tile_info/tilemap_tile_info.gd" id="4_6pgl3"]
@@ -87,6 +88,9 @@ position = Vector2(1512, 1288)
 [node name="Player" parent="HutCenter" instance=ExtResource("2_48ett")]
 position = Vector2(-33, -12)
 isEnabled = false
+
+[node name="BaseUnit" parent="HutCenter/Player" index="0"]
+unitData = ExtResource("3_k2d7t")
 
 [node name="Camera2D" type="Camera2D" parent="HutCenter/Player/BaseUnit" index="2"]
 position = Vector2(34, 12)

@@ -8,8 +8,8 @@ class_name EnemyGenerator
 @export var player: BaseUnit;
 @onready var unitsToNotCreateNear: Array[BaseUnit] = [player];
 
-var enemyCount = 20;
-var distBetweenUnits = 20;
+var enemyCount = 10;
+var distBetweenUnits = 50;
 var minDistFromPlayer = 200;
 
 func generateEnemies():

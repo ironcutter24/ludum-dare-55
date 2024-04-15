@@ -26,11 +26,13 @@ func _on_pressed():
 			for inventoryResource: ResourceWithCount in Global.playerResources:
 				if costResource.resourceData.uniqueName == inventoryResource.resourceData.uniqueName:
 					inventoryResource.count -= costResource.count;
+		(Global.player_controller.get_parent() as PlayerController).isEnabled = false;
 		Global.playerUnit = unitData;
 		var inst: PlayerController = playerPrefab.instantiate();
 		inst.global_position = Vector2(1553, 1289);
-		Global.player_controller.get_parent().get_parent().add_child(inst);
-		(Global.player_controller.get_parent() as PlayerController).isEnabled = false;
+		Global.player_controller.get_parent().get_parent().add_child(inst)
+		inst.baseUnit.setUnitData(unitData);
+
 		inst.global_position = Vector2(1553, 1289);
 		inst.isEnabled = true;
 		

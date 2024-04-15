@@ -20,6 +20,7 @@ func _on_dialogic_signal(argument:String):
 	if argument == "intro_completed":
 		StoryProgress.isIntroCompleted = true;
 		playerController.isEnabled = true;
+	print("got dialogic signal")
 
 func _process(_delta):
 	if has_overlapping_bodies():
