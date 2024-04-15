@@ -10,3 +10,4 @@
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="InventoryMenu" parent="CanvasLayer" instance=ExtResource("2_fqtky")]
+isGameScene = true
