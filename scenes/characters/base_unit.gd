@@ -2,7 +2,9 @@ class_name BaseUnit
 extends CharacterBody2D
 
 @export var Speed: int = 50
-@export var Health: int = 100
+@export var Health: float:
+	get: return healthBar.value
+	set(value): healthBar.value = value
 @export var unitData: UnitData;
 @export var projectilePrefab: PackedScene;
 @export var resourcePrefab: PackedScene;
@@ -51,7 +53,7 @@ func _attack():
 func setMoveDirection(dir: Vector2):
 	direction = dir;
 	
-func _process(delta):
+func _process(_delta):
 	healthBar.value = Health / unitData.health;
 	
 	if (Health < 0.0):
@@ -74,7 +76,7 @@ func InstantiateDrops():
 
 
 func _physics_process(_delta):
-	z_index = global_position.y;
+	z_index = roundi(global_position.y);
 	recoilTimer -= _delta;
 	if direction.length() > 0:
 		velocity = direction * unitData.speed;

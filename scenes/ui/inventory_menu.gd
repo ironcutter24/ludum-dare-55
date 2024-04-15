@@ -58,5 +58,5 @@ func _ready():
 		resourceWithCount.resourceData = resource;
 		Global.playerResources.push_back(resourceWithCount);
 
-func _process(delta):
+func _process(_delta):
 	refreshInventory()
