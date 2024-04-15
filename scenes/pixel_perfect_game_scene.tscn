@@ -1,7 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://vt7ykyq87kok"]
+[gd_scene load_steps=3 format=3 uid="uid://vt7ykyq87kok"]
 
 [ext_resource type="PackedScene" uid="uid://xtxsu48wnn1p" path="res://scenes/game_scene.tscn" id="1_cmn86"]
+[ext_resource type="PackedScene" uid="uid://bpxvwq84ymcky" path="res://scenes/ui/inventory_menu.tscn" id="2_fqtky"]
 
 [node name="PixelPerfectGameScene" type="Node2D"]
 
 [node name="GameScene" parent="." instance=ExtResource("1_cmn86")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InventoryMenu" parent="CanvasLayer" instance=ExtResource("2_fqtky")]

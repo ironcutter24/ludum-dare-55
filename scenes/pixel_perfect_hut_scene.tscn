@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bniwotomm86q1"]
+[gd_scene load_steps=4 format=3 uid="uid://bniwotomm86q1"]
 
 [ext_resource type="Script" path="res://scripts/IntroController.gd" id="2_6bhkb"]
 [ext_resource type="PackedScene" uid="uid://c0hy2gpo6l6xe" path="res://scenes/witch_hut.tscn" id="2_bukuc"]
+[ext_resource type="PackedScene" uid="uid://bpxvwq84ymcky" path="res://scenes/ui/inventory_menu.tscn" id="3_b2vov"]
 
 [node name="PixelPerfectHutScene" type="Node2D"]
 
@@ -30,3 +31,5 @@ size = Vector2i(288, 162)
 render_target_update_mode = 4
 
 [node name="WitchHut" parent="CanvasLayer/SubViewportContainer/SubViewport" instance=ExtResource("2_bukuc")]
+
+[node name="InventoryMenu" parent="CanvasLayer" instance=ExtResource("3_b2vov")]

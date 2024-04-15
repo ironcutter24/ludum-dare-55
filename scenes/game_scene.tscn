@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://xtxsu48wnn1p"]
+[gd_scene load_steps=17 format=3 uid="uid://xtxsu48wnn1p"]
 
 [ext_resource type="PackedScene" uid="uid://bq4m4s407fgvm" path="res://scenes/characters/player.tscn" id="1_2cjjq"]
 [ext_resource type="TileSet" uid="uid://caeyyuvfkxa7s" path="res://tileset.tres" id="1_k70tv"]
@@ -8,7 +8,6 @@
 [ext_resource type="Resource" uid="uid://mbni6mdjs846" path="res://tileData/generateBorder1.tres" id="6_r5d4s"]
 [ext_resource type="Resource" uid="uid://esuh3wgbx0o5" path="res://tileData/generateBorder2.tres" id="7_h5mnt"]
 [ext_resource type="Resource" uid="uid://dtx3i3thtdcux" path="res://tileData/floorTile.tres" id="9_abchu"]
-[ext_resource type="Theme" uid="uid://yqmay0cd53tl" path="res://ui/MetalPixel.tres" id="9_bvhi5"]
 [ext_resource type="Script" path="res://scripts/EnemyGenerator.gd" id="9_jcy3v"]
 [ext_resource type="PackedScene" uid="uid://6hdu1dpg02ao" path="res://scenes/characters/base_enemy.tscn" id="10_vkbn0"]
 [ext_resource type="Resource" uid="uid://xfcfv714tytc" path="res://scenes/characters/characterData/Archer_UnitData.tres" id="13_m01mj"]
@@ -77,14 +76,6 @@ generator = NodePath("../TerrainGeneration/WalkerGenerator")
 floorTile = ExtResource("9_abchu")
 enemies = Array[Resource("res://scenes/characters/characterData/unitData.gd")]([ExtResource("13_m01mj"), ExtResource("15_vh46a"), ExtResource("16_yj1n6"), ExtResource("17_na35e"), ExtResource("18_2yolu")])
 player = NodePath("../../YSortedItems/Player/BaseUnit")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="TestButton" type="Button" parent="CanvasLayer"]
-offset_right = 8.0
-offset_bottom = 8.0
-theme = ExtResource("9_bvhi5")
-text = "Placeholder theme button"
 
 [connection signal="generation_finished" from="Controllers/TerrainGeneration/WalkerGenerator" to="Controllers/EnemyGenerator" method="generateEnemies"]
 

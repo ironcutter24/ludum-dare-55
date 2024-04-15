@@ -8,7 +8,7 @@ const WALL_MASK = 1 << 0
 @export var hut_scene: PackedScene;
 
 var player_controller : BaseUnit
-var playerRessources: Dictionary # Value is ressource name, key is how much the player has
+var playerResources: Array[ResourceWithCount] # Value is ressource name, key is how much the player has
 var playerUnit: UnitData # Unit the player is
 
 # Called when the node enters the scene tree for the first time.

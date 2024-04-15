@@ -1,8 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://bpxvwq84ymcky"]
+[gd_scene load_steps=15 format=3 uid="uid://bpxvwq84ymcky"]
 
 [ext_resource type="Script" path="res://scenes/ui/inventory_menu.gd" id="1_o57mh"]
+[ext_resource type="Resource" uid="uid://xfcfv714tytc" path="res://scenes/characters/characterData/Archer_UnitData.tres" id="2_spv1q"]
+[ext_resource type="Resource" uid="uid://b7rsmdkxd0ggf" path="res://scenes/characters/characterData/EldritchSkeleton_UnitData.tres" id="3_ytvis"]
+[ext_resource type="Resource" uid="uid://b5lq16gs61htq" path="res://scenes/characters/characterData/GolemBig_UnitData.tres" id="4_30d6r"]
+[ext_resource type="Resource" uid="uid://bknqqq0r0wq6o" path="res://scenes/characters/characterData/GolemSlim_UnitData.tres" id="5_07nnh"]
+[ext_resource type="Resource" uid="uid://d3lthuleixkfi" path="res://scenes/characters/characterData/LeechWorm_UnitData.tres" id="6_vano0"]
+[ext_resource type="Resource" uid="uid://c7vuwmhx7huid" path="res://scenes/characters/characterData/Pyromancer_UnitData.tres" id="7_j3bhy"]
+[ext_resource type="Resource" uid="uid://cmsa8uf0wqh8g" path="res://scenes/ressources/resourceData/Bone.tres" id="8_cehqp"]
+[ext_resource type="Resource" uid="uid://ctendq803atda" path="res://scenes/ressources/resourceData/Bow.tres" id="9_i7cnr"]
+[ext_resource type="Resource" uid="uid://dp24en2ndrbj" path="res://scenes/ressources/resourceData/MagicStaff.tres" id="10_6je4x"]
+[ext_resource type="Resource" uid="uid://75bby780bp7k" path="res://scenes/ressources/resourceData/Meat.tres" id="11_yo7s5"]
+[ext_resource type="Resource" uid="uid://i3yxtmjtqqi7" path="res://scenes/ressources/resourceData/Sword.tres" id="12_eyduy"]
+[ext_resource type="PackedScene" uid="uid://b4wfw7qxb5672" path="res://scenes/ui/spawn_unit_button.tscn" id="13_0o2wf"]
+[ext_resource type="PackedScene" uid="uid://dia1pf7g5yerl" path="res://scenes/ui/resource_with_count_ui.tscn" id="14_occ4x"]
 
-[node name="InventoryMenu" type="Control" node_paths=PackedStringArray("RessourceListVBox", "CraftingButtonsVBox")]
+[node name="InventoryMenu" type="Control" node_paths=PackedStringArray("spawnButtons", "inventoryList")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,22 +23,27 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_o57mh")
-RessourceListVBox = NodePath("GridContainer/HBoxContainer/VBoxContainer")
-CraftingButtonsVBox = NodePath("GridContainer/HBoxContainer/VBoxContainer2")
+Units = Array[Resource("res://scenes/characters/characterData/unitData.gd")]([ExtResource("2_spv1q"), ExtResource("3_ytvis"), ExtResource("4_30d6r"), ExtResource("5_07nnh"), ExtResource("6_vano0"), ExtResource("7_j3bhy")])
+Resources = Array[Resource("res://scenes/ressources/resourceData/resourceData.gd")]([ExtResource("8_cehqp"), ExtResource("9_i7cnr"), ExtResource("10_6je4x"), ExtResource("11_yo7s5"), ExtResource("12_eyduy")])
+spawnButtons = NodePath("SpawnButtons")
+inventoryList = NodePath("Inventory")
+spawnButtonPrefab = ExtResource("13_0o2wf")
+resourceWithCountPrefab = ExtResource("14_occ4x")
 
-[node name="GridContainer" type="GridContainer" parent="."]
-layout_mode = 0
-offset_right = 1432.0
-offset_bottom = 819.0
+[node name="Inventory" type="VBoxContainer" parent="."]
+offset_left = 25.0
+offset_top = 27.0
+offset_right = 25.0
+offset_bottom = 27.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="GridContainer"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="GridContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="Button" type="Button" parent="GridContainer/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
+[node name="SpawnButtons" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -25.0
+offset_top = 30.0
+offset_right = -25.0
+offset_bottom = 30.0
+grow_horizontal = 0
+alignment = 2

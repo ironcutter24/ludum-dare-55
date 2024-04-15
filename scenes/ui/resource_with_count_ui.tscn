@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dia1pf7g5yerl"]
+
+[ext_resource type="Script" path="res://scenes/ui/resource_with_count_ui.gd" id="1_joj72"]
+[ext_resource type="Texture2D" uid="uid://bukmacbj8vux2" path="res://graphics/units/pyromancer/fireProjectileAtlasTexture.tres" id="2_s8gg8"]
+[ext_resource type="Theme" uid="uid://yqmay0cd53tl" path="res://ui/MetalPixel.tres" id="3_5tbt4"]
+
+[node name="ResourceWithCount" type="HBoxContainer" node_paths=PackedStringArray("sprite2D", "richTextLabel")]
+script = ExtResource("1_joj72")
+sprite2D = NodePath("Control/Sprite2D")
+richTextLabel = NodePath("RichTextLabel")
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
+position = Vector2(8, 8)
+texture = ExtResource("2_s8gg8")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_5tbt4")
+text = "1/20"
