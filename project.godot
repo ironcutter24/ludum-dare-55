@@ -27,7 +27,8 @@ directories/dch_directory={
 "witch": "res://dialogic/characters/witch.dch"
 }
 directories/dtl_directory={
-"intro": "res://dialogic/intro.dtl"
+"intro": "res://dialogic/intro.dtl",
+"spawn_tutorial": "res://spawn_tutorial.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=["res://dialogic/preset.tres"]

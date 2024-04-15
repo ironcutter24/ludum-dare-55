@@ -3,6 +3,8 @@ extends Node
 var isIntroCompleted := false;
 var hasCreatedPortal := false;
 var hasDiedOnce := false;
+var hasSeenSpawnTutorial := false;
+var finishedSpawnTutorial := false;
 
 func _ready():
 	Dialogic.signal_event.connect(_on_dialogic_signal)

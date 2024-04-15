@@ -10,6 +10,8 @@ class_name InventoryMenu
 @export var spawnButtonPrefab: PackedScene;
 @export var resourceWithCountPrefab: PackedScene;
 
+@export var isGameScene: bool = false;
+
 # It's here to keep track which button corresponds to which unit
 var buttonMap: Dictionary 
 
@@ -61,4 +63,8 @@ func _ready():
 			Global.playerResources.push_back(resourceWithCount);
 
 func _process(_delta):
+	if (StoryProgress.finishedSpawnTutorial and Global.playerUnit == null and !isGameScene):
+		spawnButtons.visible = true;
+	else:
+		spawnButtons.visible = false;
 	refreshInventory()
