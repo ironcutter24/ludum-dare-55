@@ -10,6 +10,9 @@ class_name SpawnUnitButton
 
 var pressModulate = Color.WHITE;
 
+func _ready():
+	pressModulate = Color.WHITE;
+	modulate = pressModulate * get_build_modulate()
 # Called when the node enters the scene tree for the first time.
 func setUnit(_unit: UnitData):
 	unitData = _unit;
@@ -18,6 +21,8 @@ func setUnit(_unit: UnitData):
 	for i in range(unitData.drops.size()):
 		itemsWithCount[i].visible = true;
 		itemsWithCount[i].setResourceWithCount(unitData.drops[i]);
+	pressModulate = Color.WHITE;
+	modulate = pressModulate * get_build_modulate()
 	
 func _on_pressed():
 	if (can_build()):
@@ -39,7 +44,7 @@ func _on_pressed():
 		
 
 func can_build()-> bool:
-	return randf() > 0.5;
+
 	for costResource: ResourceWithCount in unitData.drops:
 		for inventoryResource: ResourceWithCount in Global.playerResources:
 			if costResource.resourceData.uniqueName == inventoryResource.resourceData.uniqueName:
@@ -49,7 +54,7 @@ func can_build()-> bool:
 
 	
 func get_build_modulate():
-	if (can_build()):
+	if (!can_build()):
 		return Color(0.7,0.6,0.6);
 	return Color.WHITE;
 
