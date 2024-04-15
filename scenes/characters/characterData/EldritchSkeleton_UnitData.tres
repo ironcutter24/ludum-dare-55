@@ -23,6 +23,7 @@ uniqueName = "Eldritch Skeleton"
 speed = 60.0
 isSwingingAttack = false
 projectileSpeed = 50.0
+projectileTextures = Array[AtlasTexture]([])
 projectileAliveTime = 1.0
 projectileDamage = 10
 health = 20

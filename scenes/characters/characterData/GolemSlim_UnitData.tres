@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="UnitData" load_steps=6 format=3 uid="uid://bknqqq0r0wq6o"]
+[gd_resource type="Resource" script_class="UnitData" load_steps=8 format=3 uid="uid://bknqqq0r0wq6o"]
 
 [ext_resource type="Resource" uid="uid://75bby780bp7k" path="res://scenes/ressources/resourceData/Meat.tres" id="1_6nwkl"]
 [ext_resource type="Script" path="res://scenes/ressources/resourceData/resourceWithCount.gd" id="2_4y0ha"]
+[ext_resource type="Texture2D" uid="uid://ctay48u4d20mm" path="res://graphics/units/warriors.png" id="3_f2me0"]
 [ext_resource type="Script" path="res://scenes/characters/characterData/unitData.gd" id="3_t42ps"]
 [ext_resource type="SpriteFrames" uid="uid://cym6vgo4yyip3" path="res://graphics/animations/GolemSlim_SpriteFrames.tres" id="4_aevt0"]
 
@@ -10,6 +11,10 @@ script = ExtResource("2_4y0ha")
 resourceData = ExtResource("1_6nwkl")
 count = 16
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_olff4"]
+atlas = ExtResource("3_f2me0")
+region = Rect2(133, 167, 10, 3)
+
 [resource]
 script = ExtResource("3_t42ps")
 prices = Array[ExtResource("2_4y0ha")]([SubResource("Resource_bd8vr")])
@@ -17,6 +22,7 @@ uniqueName = "Golem Slim"
 speed = 40.0
 isSwingingAttack = false
 projectileSpeed = 50.0
+projectileTextures = Array[AtlasTexture]([SubResource("AtlasTexture_olff4")])
 projectileAliveTime = 1.0
 projectileDamage = 10
 health = 20

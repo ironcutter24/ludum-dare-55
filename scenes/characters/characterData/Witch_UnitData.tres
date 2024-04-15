@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=3 format=3 uid="uid://bmmaq5aif5ktb"]
+
+[ext_resource type="Script" path="res://scenes/characters/characterData/unitData.gd" id="1_w6oo2"]
+[ext_resource type="SpriteFrames" uid="uid://dslvmw6wrqjxg" path="res://graphics/animations/Witch_SpriteFrames.tres" id="2_acvhg"]
+
+[resource]
+script = ExtResource("1_w6oo2")
+prices = Array[Resource("res://scenes/ressources/resourceData/resourceWithCount.gd")]([])
+uniqueName = "Witch"
+speed = 50.0
+isSwingingAttack = false
+projectileSpeed = 50.0
+projectileTextures = Array[AtlasTexture]([])
+projectileAliveTime = 1.0
+projectileDamage = 10
+health = 20
+bulletsPierce = false
+attackRecoil = 1.0
+spriteFrames = ExtResource("2_acvhg")

@@ -1,15 +1,28 @@
-[gd_resource type="Resource" script_class="UnitData" load_steps=7 format=3 uid="uid://c7vuwmhx7huid"]
+[gd_resource type="Resource" script_class="UnitData" load_steps=11 format=3 uid="uid://c7vuwmhx7huid"]
 
 [ext_resource type="Resource" uid="uid://75bby780bp7k" path="res://scenes/ressources/resourceData/Meat.tres" id="1_lm34t"]
 [ext_resource type="Script" path="res://scenes/ressources/resourceData/resourceWithCount.gd" id="2_8avdy"]
 [ext_resource type="Script" path="res://scenes/characters/characterData/unitData.gd" id="3_7vtgq"]
 [ext_resource type="Texture2D" uid="uid://bukmacbj8vux2" path="res://graphics/units/pyromancer/fireProjectileAtlasTexture.tres" id="3_dgnjb"]
+[ext_resource type="Texture2D" uid="uid://ctay48u4d20mm" path="res://graphics/units/warriors.png" id="4_jafbw"]
 [ext_resource type="SpriteFrames" uid="uid://pjf8wres2uhc" path="res://graphics/animations/Pyromancer_SpriteFrames.tres" id="4_m6ink"]
 
 [sub_resource type="Resource" id="Resource_bd8vr"]
 script = ExtResource("2_8avdy")
 resourceData = ExtResource("1_lm34t")
 count = 16
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7aap"]
+atlas = ExtResource("4_jafbw")
+region = Rect2(130, 37, 5, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5sivx"]
+atlas = ExtResource("4_jafbw")
+region = Rect2(137, 35, 4, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ll0hn"]
+atlas = ExtResource("4_jafbw")
+region = Rect2(136, 43, 3, 3)
 
 [resource]
 script = ExtResource("3_7vtgq")
@@ -19,6 +32,7 @@ speed = 40.0
 isSwingingAttack = false
 projectileSpeed = 75.0
 projectileTexture = ExtResource("3_dgnjb")
+projectileTextures = Array[AtlasTexture]([SubResource("AtlasTexture_j7aap"), SubResource("AtlasTexture_5sivx"), SubResource("AtlasTexture_ll0hn")])
 projectileAliveTime = 1.5
 projectileDamage = 10
 health = 20

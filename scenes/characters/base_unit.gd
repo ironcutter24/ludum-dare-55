@@ -20,13 +20,12 @@ var recoilTimer = 0.0;
 
 
 func _ready():
-	# The max value is the initial amount of health the creature has
-	healthBar.max_value = unitData.health 
-	anim.sprite_frames = unitData.spriteFrames
+	setUnitData(unitData)
 	
 func setUnitData(_unitData: UnitData):
 	unitData = _unitData
-	Health = unitData.health;
+	healthBar.max_value = unitData.health
+	Health = unitData.health
 	anim.sprite_frames = unitData.spriteFrames
 
 func setTargetPosition(pos: Vector2):
