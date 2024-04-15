@@ -9,7 +9,7 @@ var isPlayerBullet = false;
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func refresh():
-	sprite.texture = unitData.projectileTexture;
+	sprite.texture = unitData.projectileTextures.pick_random()
 	aliveTimer = unitData.projectileAliveTime;
 
 func _process(delta):

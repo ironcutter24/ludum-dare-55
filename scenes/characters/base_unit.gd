@@ -36,7 +36,6 @@ func TryAttack():
 		_attack();
 		
 func _attack():
-
 	if (unitData.projectileTexture != null):
 		var inst = projectilePrefab.instantiate() as BaseProjectile;
 		var projectileDirection = (targetPosition - global_position).normalized();
