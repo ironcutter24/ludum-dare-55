@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://bpxvwq84ymcky"]
+[gd_scene load_steps=16 format=3 uid="uid://bpxvwq84ymcky"]
 
 [ext_resource type="Script" path="res://scenes/ui/inventory_menu.gd" id="1_o57mh"]
+[ext_resource type="Resource" uid="uid://b848sqyo76rmj" path="res://scenes/characters/characterData/BlackSlime_UnitData.tres" id="2_mnm3g"]
 [ext_resource type="Resource" uid="uid://xfcfv714tytc" path="res://scenes/characters/characterData/Archer_UnitData.tres" id="2_spv1q"]
 [ext_resource type="Resource" uid="uid://b7rsmdkxd0ggf" path="res://scenes/characters/characterData/EldritchSkeleton_UnitData.tres" id="3_ytvis"]
 [ext_resource type="Resource" uid="uid://b5lq16gs61htq" path="res://scenes/characters/characterData/GolemBig_UnitData.tres" id="4_30d6r"]
@@ -23,7 +24,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_o57mh")
-Units = Array[Resource("res://scenes/characters/characterData/unitData.gd")]([ExtResource("2_spv1q"), ExtResource("3_ytvis"), ExtResource("4_30d6r"), ExtResource("5_07nnh"), ExtResource("6_vano0"), ExtResource("7_j3bhy")])
+Units = Array[Resource("res://scenes/characters/characterData/unitData.gd")]([ExtResource("2_mnm3g"), ExtResource("3_ytvis"), ExtResource("4_30d6r"), ExtResource("5_07nnh"), ExtResource("6_vano0"), ExtResource("2_spv1q"), ExtResource("7_j3bhy")])
 Resources = Array[Resource("res://scenes/ressources/resourceData/resourceData.gd")]([ExtResource("8_e1v1g"), ExtResource("8_cehqp"), ExtResource("9_i7cnr"), ExtResource("11_uk4j2"), ExtResource("10_6je4x")])
 spawnButtons = NodePath("SpawnButtons")
 inventoryList = NodePath("Inventory")

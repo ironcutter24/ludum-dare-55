@@ -1,15 +1,8 @@
-[gd_resource type="Resource" script_class="UnitData" load_steps=8 format=3 uid="uid://bawpkf0lyyf6j"]
+[gd_resource type="Resource" script_class="UnitData" load_steps=5 format=3 uid="uid://b848sqyo76rmj"]
 
-[ext_resource type="Resource" uid="uid://cmsa8uf0wqh8g" path="res://scenes/ressources/resourceData/Bone_ResourceData.tres" id="1_0wpvn"]
-[ext_resource type="Script" path="res://scenes/ressources/resourceData/resourceWithCount.gd" id="2_b2xme"]
 [ext_resource type="Texture2D" uid="uid://ctay48u4d20mm" path="res://graphics/units/warriors.png" id="3_c20dq"]
 [ext_resource type="Script" path="res://scenes/characters/characterData/unitData.gd" id="4_ho4l7"]
-[ext_resource type="SpriteFrames" uid="uid://cj0kknpdbyyy" path="res://graphics/animations/BlackSlime_SpriteFrames.tres" id="5_aqamr"]
-
-[sub_resource type="Resource" id="Resource_randm"]
-script = ExtResource("2_b2xme")
-resourceData = ExtResource("1_0wpvn")
-count = 1
+[ext_resource type="SpriteFrames" uid="uid://cxv5xqrym3mea" path="res://graphics/animations/BlackSlime_SpriteFrames.tres" id="5_aqamr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r688b"]
 atlas = ExtResource("3_c20dq")
@@ -19,7 +12,7 @@ region = Rect2(134, 279, 4, 3)
 script = ExtResource("4_ho4l7")
 uniqueName = "Black Slime"
 spriteFrames = ExtResource("5_aqamr")
-drops = Array[ExtResource("2_b2xme")]([SubResource("Resource_randm")])
+drops = Array[Resource("res://scenes/ressources/resourceData/resourceWithCount.gd")]([])
 health = 20
 speed = 60.0
 isSwingingAttack = false
