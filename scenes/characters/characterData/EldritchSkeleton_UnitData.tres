@@ -1,14 +1,19 @@
-[gd_resource type="Resource" script_class="UnitData" load_steps=6 format=3 uid="uid://b7rsmdkxd0ggf"]
+[gd_resource type="Resource" script_class="UnitData" load_steps=8 format=3 uid="uid://b7rsmdkxd0ggf"]
 
 [ext_resource type="Resource" uid="uid://cmsa8uf0wqh8g" path="res://scenes/ressources/resourceData/Bone_ResourceData.tres" id="1_3l7aj"]
 [ext_resource type="Script" path="res://scenes/ressources/resourceData/resourceWithCount.gd" id="2_nrnw3"]
 [ext_resource type="Script" path="res://scenes/characters/characterData/unitData.gd" id="3_d3o50"]
+[ext_resource type="Texture2D" uid="uid://ctay48u4d20mm" path="res://graphics/units/warriors.png" id="3_noybt"]
 [ext_resource type="SpriteFrames" uid="uid://cf6d275wlxpri" path="res://graphics/animations/EldritchSkeleton_SpriteFrames.tres" id="5_8exy0"]
 
 [sub_resource type="Resource" id="Resource_randm"]
 script = ExtResource("2_nrnw3")
 resourceData = ExtResource("1_3l7aj")
 count = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qyjg"]
+atlas = ExtResource("3_noybt")
+region = Rect2(150, 5, 7, 8)
 
 [resource]
 script = ExtResource("3_d3o50")
@@ -19,7 +24,7 @@ health = 20
 speed = 60.0
 isSwingingAttack = false
 attackRecoil = 1.0
-projectileTextures = Array[AtlasTexture]([])
+projectileTextures = Array[AtlasTexture]([SubResource("AtlasTexture_6qyjg")])
 projectileDamage = 6
 projectileSpeed = 70.0
 projectileAliveTime = 1.6
