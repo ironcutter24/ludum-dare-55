@@ -36,15 +36,17 @@ offset_left = 25.0
 offset_top = 27.0
 offset_right = 25.0
 offset_bottom = 27.0
+scale = Vector2(2, 2)
 
 [node name="SpawnButtons" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -25.0
+offset_left = -85.0
 offset_top = 30.0
-offset_right = -25.0
+offset_right = -85.0
 offset_bottom = 30.0
 grow_horizontal = 0
+scale = Vector2(1.5, 1.5)
 alignment = 2
