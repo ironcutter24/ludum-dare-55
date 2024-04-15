@@ -6,6 +6,7 @@ class_name SpawnUnitButton
 @export var animatedSprite: AnimatedSprite2D;
 @export var textLabel: RichTextLabel;
 @export var itemsWithCount: Array[Control];
+@export var playerPrefab: PackedScene;
 
 var pressModulate = Color.WHITE;
 
@@ -19,10 +20,31 @@ func setUnit(_unit: UnitData):
 		itemsWithCount[i].setResourceWithCount(unitData.drops[i]);
 	
 func _on_pressed():
-	pass # Replace with function body.
+	if (can_build()):
+	
+		for costResource: ResourceWithCount in unitData.prices:
+			for inventoryResource: ResourceWithCount in Global.playerResources:
+				if costResource.resourceData.uniqueName == inventoryResource.resourceData.uniqueName:
+					inventoryResource.count -= costResource.count;
+		Global.playerUnit = unitData;
+		var inst: PlayerController = playerPrefab.instantiate();
+		inst.global_position = Vector2(1553, 1289);
+		Global.player_controller.get_parent().get_parent().add_child(inst);
+		(Global.player_controller.get_parent() as PlayerController).isEnabled = false;
+		inst.global_position = Vector2(1553, 1289);
+		inst.isEnabled = true;
+		
+		
 
 func can_build()-> bool:
 	return randf() > 0.5;
+	for costResource: ResourceWithCount in unitData.prices:
+		for inventoryResource: ResourceWithCount in Global.playerResources:
+			if costResource.resourceData.uniqueName == inventoryResource.resourceData.uniqueName:
+				if inventoryResource.count < costResource.count:
+					return false;
+	return true;
+
 	
 func get_build_modulate():
 	if (can_build()):

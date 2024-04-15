@@ -10,6 +10,7 @@ class_name EnemyGenerator
 
 var enemyCount = 20;
 var distBetweenUnits = 20;
+var minDistFromPlayer = 200;
 
 func generateEnemies():
 	while (enemyCount > 0):
@@ -30,6 +31,8 @@ func generateEnemies():
 			for enemy in unitsToNotCreateNear:
 				var dist: Vector2 = randTile * Vector2i(16,12) - Vector2i(enemy.global_position)
 				if dist.length_squared() < distBetweenUnits * distBetweenUnits:
+					isFarFromOthers = false;
+				if enemy == player and dist.length_squared() < minDistFromPlayer * minDistFromPlayer:
 					isFarFromOthers = false;
 		
 		if isValidSquare and isFarFromOthers:

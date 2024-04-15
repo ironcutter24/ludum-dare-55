@@ -31,6 +31,7 @@ spawnButtonPrefab = ExtResource("13_0o2wf")
 resourceWithCountPrefab = ExtResource("14_occ4x")
 
 [node name="Inventory" type="VBoxContainer" parent="."]
+layout_mode = 0
 offset_left = 25.0
 offset_top = 27.0
 offset_right = 25.0
