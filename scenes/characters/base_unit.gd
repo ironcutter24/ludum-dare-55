@@ -41,7 +41,7 @@ func _attack():
 		inst.unitData = unitData;
 		inst.refresh();
 		get_parent().add_child(inst);
-		inst.global_position = global_position;	
+		inst.global_position = global_position;
 		inst.isPlayerBullet = !(get_parent() is BaseEnemy)
 
 	recoilTimer = unitData.attackRecoil;
