@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://xtxsu48wnn1p"]
+[gd_scene load_steps=18 format=3 uid="uid://xtxsu48wnn1p"]
 
 [ext_resource type="PackedScene" uid="uid://bq4m4s407fgvm" path="res://scenes/characters/player.tscn" id="1_2cjjq"]
 [ext_resource type="TileSet" uid="uid://caeyyuvfkxa7s" path="res://tileset.tres" id="1_k70tv"]
+[ext_resource type="Resource" uid="uid://bmmaq5aif5ktb" path="res://scenes/characters/characterData/Witch_UnitData.tres" id="2_85uhy"]
 [ext_resource type="Script" path="res://addons/gaea/generators/2D/walker_generator/walker_generator.gd" id="3_2o4ap"]
 [ext_resource type="Script" path="res://addons/gaea/generators/2D/walker_generator/walker_generator_settings.gd" id="4_2i0rp"]
 [ext_resource type="Script" path="res://addons/gaea/renderers/2D/tilemap_gaea_renderer.gd" id="6_jutyt"]
@@ -43,7 +44,7 @@ y_sort_enabled = true
 y_sort_enabled = true
 
 [node name="BaseUnit" parent="YSortedItems/Player" index="0"]
-unitData = ExtResource("18_2yolu")
+unitData = ExtResource("2_85uhy")
 
 [node name="Camera2D" type="Camera2D" parent="YSortedItems/Player/BaseUnit" index="2"]
 zoom = Vector2(4, 4)
