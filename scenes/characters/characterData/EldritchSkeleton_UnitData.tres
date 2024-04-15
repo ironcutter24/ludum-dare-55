@@ -26,6 +26,6 @@ isSwingingAttack = false
 attackRecoil = 1.0
 projectileTextures = Array[AtlasTexture]([SubResource("AtlasTexture_6qyjg")])
 projectileDamage = 6
-projectileSpeed = 70.0
+projectileSpeed = 90.0
 projectileAliveTime = 1.6
 bulletsPierce = false

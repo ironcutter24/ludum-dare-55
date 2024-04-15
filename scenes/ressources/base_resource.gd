@@ -9,10 +9,9 @@ func Refresh():
 		
 		resourceSprite.texture = resourceData.texture;
 
-func _process(delta):
+func _process(_delta):
 	if has_overlapping_bodies():
 		for resource: ResourceWithCount in Global.playerResources:
 			if resource.resourceData.uniqueName == resourceData.uniqueName:
 				resource.count += 1;
 		queue_free();
-

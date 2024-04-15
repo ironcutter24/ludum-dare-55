@@ -26,7 +26,7 @@ func generateEnemies():
 				if (tile != floorTile):
 					isValidSquare = false;
 		
-		var isFarFromOthers = true;	
+		var isFarFromOthers = true;
 		if isValidSquare == true:
 			for enemy in unitsToNotCreateNear:
 				var dist: Vector2 = randTile * Vector2i(16,12) - Vector2i(enemy.global_position)
