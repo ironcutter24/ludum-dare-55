@@ -53,6 +53,7 @@ func apply_damage(value: int):
 	if (healthBar.value <= 0):
 		if get_parent() is PlayerController:
 			StoryProgress.hasDiedOnce = true;
+			Global.playerUnit = null;
 			Global.load_hut_scene();
 		else:
 			InstantiateDrops();
@@ -61,13 +62,12 @@ func apply_damage(value: int):
 func InstantiateDrops():
 	for resource: ResourceWithCount in unitData.drops:
 		for i in range(resource.count):
-			if randf() < 0.1:
-				var resourceSpawnDist = 10;
-				var instantiatedResource: BaseResource = resourcePrefab.instantiate();
-				instantiatedResource.resourceData = resource.resourceData;
-				get_parent().get_parent().add_child(instantiatedResource);
-				instantiatedResource.global_position = global_position + Vector2(randi_range(-resourceSpawnDist, resourceSpawnDist), randi_range(-resourceSpawnDist, resourceSpawnDist));
-				instantiatedResource.Refresh();
+			var resourceSpawnDist = 10;
+			var instantiatedResource: BaseResource = resourcePrefab.instantiate();
+			instantiatedResource.resourceData = resource.resourceData;
+			get_parent().get_parent().add_child(instantiatedResource);
+			instantiatedResource.global_position = global_position + Vector2(randi_range(-resourceSpawnDist, resourceSpawnDist), randi_range(-resourceSpawnDist, resourceSpawnDist));
+			instantiatedResource.Refresh();
 
 func _physics_process(_delta):
 	recoilTimer -= _delta;
