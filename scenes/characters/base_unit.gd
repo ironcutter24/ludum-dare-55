@@ -34,14 +34,16 @@ func TryAttack():
 
 func _attack():
 	if (unitData.projectileTextures.size() > 0):
-		var inst = projectilePrefab.instantiate() as BaseProjectile;
-		var projectileDirection = (targetPosition - global_position).normalized();
-		inst.normalizedDirection = projectileDirection;
-		inst.unitData = unitData;
-		inst.refresh();
-		get_parent().add_child(inst);
-		inst.global_position = global_position + Vector2.UP * 16;
-		inst.isPlayerBullet = !(get_parent() is BaseEnemy)
+		for i in range(unitData.numberOfBullets):
+			var randomRotation = (randf()-0.5) * unitData.bulletDirectionVariation * PI/180.0
+			var inst = projectilePrefab.instantiate() as BaseProjectile;
+			var projectileDirection = (targetPosition - global_position).normalized().rotated(randomRotation);
+			inst.normalizedDirection = projectileDirection;
+			inst.unitData = unitData;
+			inst.refresh();
+			get_parent().add_child(inst);
+			inst.global_position = global_position + Vector2.UP * 16;
+			inst.isPlayerBullet = !(get_parent() is BaseEnemy)
 	
 	recoilTimer = unitData.attackRecoil;
 
