@@ -2,11 +2,15 @@ class_name BaseUnit
 extends CharacterBody2D
 
 
+const DROPS_AMOUNT_MIN = 2
+const DROPS_AMOUNT_MAX = 4
+
 @export var unitData: UnitData;
 @export var projectilePrefab: PackedScene;
 @export var resourcePrefab: PackedScene;
 @export var speed_multiplier: float = 1.0
 @export var healthBar: ProgressBar
+@export var showHealthBar: bool = true
 
 var direction : Vector2
 var is_flipped = false
@@ -24,6 +28,8 @@ func setUnitData(_unitData: UnitData):
 	healthBar.max_value = unitData.health
 	healthBar.value = unitData.health
 	anim.sprite_frames = unitData.spriteFrames
+	print(showHealthBar)
+	healthBar.visible = showHealthBar
 
 func setTargetPosition(pos: Vector2):
 	targetPosition = pos;
@@ -61,13 +67,19 @@ func apply_damage(value: int):
 
 func InstantiateDrops():
 	for resource: ResourceWithCount in unitData.drops:
-		for i in range(resource.count):
+		var drops_amount = GetDropsAmount()
+		for i in range(drops_amount):
 			var resourceSpawnDist = 10;
 			var instantiatedResource: BaseResource = resourcePrefab.instantiate();
 			instantiatedResource.resourceData = resource.resourceData;
 			get_parent().get_parent().add_child(instantiatedResource);
 			instantiatedResource.global_position = global_position + Vector2(randi_range(-resourceSpawnDist, resourceSpawnDist), randi_range(-resourceSpawnDist, resourceSpawnDist));
 			instantiatedResource.Refresh();
+
+func GetDropsAmount():
+	var rng = RandomNumberGenerator.new()
+	rng.randomize()
+	return rng.randi_range(DROPS_AMOUNT_MIN, DROPS_AMOUNT_MAX)
 
 func _physics_process(_delta):
 	recoilTimer -= _delta;

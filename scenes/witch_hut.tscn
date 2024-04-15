@@ -200,6 +200,7 @@ isEnabled = false
 
 [node name="BaseUnit" parent="HutCenter/Player" index="0"]
 unitData = ExtResource("3_k2d7t")
+showHealthBar = false
 
 [node name="Camera2D" type="Camera2D" parent="HutCenter/Player/BaseUnit" index="2"]
 position = Vector2(34, 12)
