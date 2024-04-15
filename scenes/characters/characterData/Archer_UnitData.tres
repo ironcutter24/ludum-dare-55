@@ -9,7 +9,7 @@
 [sub_resource type="Resource" id="Resource_xhcli"]
 script = ExtResource("2_oix2d")
 resourceData = ExtResource("1_pr661")
-count = 1
+count = 6
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mbwdq"]
 atlas = ExtResource("3_gsgw5")
@@ -21,9 +21,9 @@ uniqueName = "Archer"
 spriteFrames = ExtResource("4_in11v")
 drops = Array[ExtResource("2_oix2d")]([SubResource("Resource_xhcli")])
 health = 20
-speed = 40.0
+speed = 55.0
 isSwingingAttack = false
-attackRecoil = 4.0
+attackRecoil = 2.6
 projectileTextures = Array[AtlasTexture]([SubResource("AtlasTexture_mbwdq")])
 projectileDamage = 10
 projectileSpeed = 140.0

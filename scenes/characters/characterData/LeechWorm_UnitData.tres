@@ -9,7 +9,7 @@
 [sub_resource type="Resource" id="Resource_gb781"]
 script = ExtResource("2_ffin0")
 resourceData = ExtResource("1_eg7lp")
-count = 1
+count = 6
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4g5n1"]
 atlas = ExtResource("4_eeypk")
@@ -21,11 +21,11 @@ uniqueName = "Leech Worm"
 spriteFrames = ExtResource("5_y0y86")
 drops = Array[ExtResource("2_ffin0")]([SubResource("Resource_gb781")])
 health = 20
-speed = 40.0
+speed = 60.0
 isSwingingAttack = false
 attackRecoil = 1.0
 projectileTextures = Array[AtlasTexture]([SubResource("AtlasTexture_4g5n1")])
-projectileDamage = 10
-projectileSpeed = 70.0
+projectileDamage = 8
+projectileSpeed = 85.0
 projectileAliveTime = 1.6
 bulletsPierce = false

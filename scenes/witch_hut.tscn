@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c0hy2gpo6l6xe"]
+[gd_scene load_steps=36 format=3 uid="uid://c0hy2gpo6l6xe"]
 
 [ext_resource type="Script" path="res://addons/gaea/generators/2D/cellular_generator/cellular_generator.gd" id="2_1t8ax"]
 [ext_resource type="PackedScene" uid="uid://bq4m4s407fgvm" path="res://scenes/characters/player.tscn" id="2_48ett"]
@@ -10,6 +10,7 @@
 [ext_resource type="TileSet" uid="uid://caeyyuvfkxa7s" path="res://tileset.tres" id="5_cra1u"]
 [ext_resource type="Script" path="res://addons/gaea/renderers/2D/tilemap_gaea_renderer.gd" id="5_tyapg"]
 [ext_resource type="PackedScene" uid="uid://vt7ykyq87kok" path="res://scenes/pixel_perfect_game_scene.tscn" id="5_xsgyf"]
+[ext_resource type="Texture2D" uid="uid://cggoo0guu6x27" path="res://graphics/cauldron.png" id="11_mwv3r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y1s1q"]
 atlas = ExtResource("3_uyyhi")
@@ -73,6 +74,114 @@ smooth_iterations = 6
 max_floor_empty_neighbors = 4
 min_empty_neighbors = 3
 modifiers = Array[Resource("res://addons/gaea/modifiers/2D/modifier_2d.gd")]([])
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxlp1"]
+atlas = ExtResource("11_mwv3r")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8rhm"]
+atlas = ExtResource("11_mwv3r")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srwwq"]
+atlas = ExtResource("11_mwv3r")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qafb1"]
+atlas = ExtResource("11_mwv3r")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a8rva"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxlp1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8rhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_srwwq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qafb1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fn1m"]
+atlas = ExtResource("11_mwv3r")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrgmd"]
+atlas = ExtResource("11_mwv3r")
+region = Rect2(80, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmane"]
+atlas = ExtResource("11_mwv3r")
+region = Rect2(96, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6cyc"]
+atlas = ExtResource("11_mwv3r")
+region = Rect2(112, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5osqb"]
+atlas = ExtResource("11_mwv3r")
+region = Rect2(128, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjb1v"]
+atlas = ExtResource("11_mwv3r")
+region = Rect2(144, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pie65"]
+atlas = ExtResource("11_mwv3r")
+region = Rect2(160, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8kl4"]
+atlas = ExtResource("11_mwv3r")
+region = Rect2(176, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ud0s2"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fn1m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wrgmd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmane")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6cyc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5osqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjb1v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pie65")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8kl4")
+}],
+"loop": true,
+"name": &"splash",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5hncc"]
+size = Vector2(11, 5)
 
 [node name="WitchHut" type="Node2D"]
 
@@ -143,6 +252,24 @@ generator = NodePath("../CellularGenerator")
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(1553, 1289)
+
+[node name="Cauldron" type="Node2D" parent="."]
+position = Vector2(1499, 1284)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Cauldron"]
+sprite_frames = SubResource("SpriteFrames_a8rva")
+autoplay = "default"
+
+[node name="AnimatedSplash" type="AnimatedSprite2D" parent="Cauldron"]
+sprite_frames = SubResource("SpriteFrames_ud0s2")
+autoplay = "default"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Cauldron"]
+position = Vector2(0, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cauldron/StaticBody2D"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_5hncc")
 
 [connection signal="area_entered" from="HutCenter/PortalArea2D" to="HutCenter/PortalArea2D" method="_on_area_entered"]
 

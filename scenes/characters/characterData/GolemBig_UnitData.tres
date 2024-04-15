@@ -9,7 +9,7 @@
 [sub_resource type="Resource" id="Resource_o8ui4"]
 script = ExtResource("2_jpejn")
 resourceData = ExtResource("1_4u8by")
-count = 1
+count = 8
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h2rxt"]
 atlas = ExtResource("3_jasn6")
@@ -21,11 +21,11 @@ uniqueName = "Golem Big"
 spriteFrames = ExtResource("4_psyrk")
 drops = Array[ExtResource("2_jpejn")]([SubResource("Resource_o8ui4")])
 health = 20
-speed = 40.0
+speed = 35.0
 isSwingingAttack = false
 attackRecoil = 1.2
 projectileTextures = Array[AtlasTexture]([SubResource("AtlasTexture_h2rxt")])
 projectileDamage = 8
 projectileSpeed = 70.0
-projectileAliveTime = 1.0
+projectileAliveTime = 2.5
 bulletsPierce = false
