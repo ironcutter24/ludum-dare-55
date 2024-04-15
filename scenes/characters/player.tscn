@@ -5,6 +5,7 @@
 [ext_resource type="Resource" uid="uid://b5lq16gs61htq" path="res://scenes/characters/characterData/GolemBig_UnitData.tres" id="3_sblf3"]
 
 [node name="Player" type="Node2D" node_paths=PackedStringArray("baseUnit")]
+y_sort_enabled = true
 script = ExtResource("1_jrh5p")
 baseUnit = NodePath("BaseUnit")
 

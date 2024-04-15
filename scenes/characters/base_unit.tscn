@@ -25,8 +25,9 @@ shape = SubResource("RectangleShape2D_dmi2q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
-position = Vector2(0, -16)
+position = Vector2(0, -8)
 sprite_frames = ExtResource("5_q0qdp")
+offset = Vector2(0, -8)
 
 [node name="Healthbar" type="Node2D" parent="."]
 scale = Vector2(0.1, 0.1)
