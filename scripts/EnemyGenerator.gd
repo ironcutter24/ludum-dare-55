@@ -29,7 +29,7 @@ func generateEnemies():
 		var isFarFromOthers = true;
 		if isValidSquare == true:
 			for enemy in unitsToNotCreateNear:
-				var dist: Vector2 = randTile * Vector2i(16,12) - Vector2i(enemy.global_position)
+				var dist: Vector2 = toWorldPosition(randTile) - Vector2i(enemy.global_position)
 				if dist.length_squared() < distBetweenUnits * distBetweenUnits:
 					isFarFromOthers = false;
 				if enemy == player and dist.length_squared() < minDistFromPlayer * minDistFromPlayer:
@@ -38,10 +38,13 @@ func generateEnemies():
 		if isValidSquare and isFarFromOthers:
 			spawnEnemy(randTile);
 
-func spawnEnemy(pos: Vector2i):
+func spawnEnemy(tilePos: Vector2i):
 	var inst: BaseEnemy = enemyScene.instantiate();
 	get_parent().add_child(inst);
 	unitsToNotCreateNear.push_back(inst);
-	inst.global_position = pos * Vector2i(16, 12);
+	inst.global_position = toWorldPosition(tilePos);
 	inst.setUnitData(enemies.pick_random());
 	enemyCount -= 1;
+
+func toWorldPosition(tilePos: Vector2i):
+	return tilePos * Vector2i(16, 12)

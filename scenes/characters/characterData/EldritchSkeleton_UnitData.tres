@@ -9,7 +9,7 @@
 [sub_resource type="Resource" id="Resource_randm"]
 script = ExtResource("2_nrnw3")
 resourceData = ExtResource("1_3l7aj")
-count = 1
+count = 2
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6qyjg"]
 atlas = ExtResource("3_noybt")
