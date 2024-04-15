@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://b4wfw7qxb5672"]
+[gd_scene load_steps=7 format=3 uid="uid://b4wfw7qxb5672"]
 
 [ext_resource type="Theme" uid="uid://yqmay0cd53tl" path="res://ui/MetalPixel.tres" id="1_5hn7r"]
 [ext_resource type="Script" path="res://scenes/ui/spawn_unit_button.gd" id="2_jrkrg"]
 [ext_resource type="SpriteFrames" uid="uid://cyyxexeug0gg1" path="res://graphics/animations/GolemBig_SpriteFrames.tres" id="2_vpyc5"]
 [ext_resource type="Resource" uid="uid://b5lq16gs61htq" path="res://scenes/characters/characterData/GolemBig_UnitData.tres" id="3_2oyb7"]
+[ext_resource type="PackedScene" uid="uid://bq4m4s407fgvm" path="res://scenes/characters/player.tscn" id="4_twd2b"]
 [ext_resource type="PackedScene" uid="uid://dia1pf7g5yerl" path="res://scenes/ui/resource_with_count_ui.tscn" id="5_q6s34"]
 
 [node name="SpawnUnitButton" type="Button" node_paths=PackedStringArray("animatedSprite", "textLabel", "itemsWithCount")]
@@ -16,6 +17,7 @@ unitData = ExtResource("3_2oyb7")
 animatedSprite = NodePath("Control/AnimatedSprite2D")
 textLabel = NodePath("RichTextLabel")
 itemsWithCount = [NodePath("GridContainer/ResourceWithCount"), NodePath("GridContainer/ResourceWithCount2"), NodePath("GridContainer/ResourceWithCount3"), NodePath("GridContainer/ResourceWithCount4")]
+playerPrefab = ExtResource("4_twd2b")
 
 [node name="Control" type="Control" parent="."]
 custom_minimum_size = Vector2(32, 32)
