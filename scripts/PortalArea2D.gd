@@ -23,6 +23,4 @@ func _on_dialogic_signal(argument:String):
 
 func _process(_delta):
 	if has_overlapping_bodies():
-		if SceneLoader.sceneLoaded == null:
-			SceneLoader.sceneLoaded = rootWitchScene.get_parent();
-		SceneLoader.load_new_scene(dungeonScene);
+		Global.load_packed_scene(dungeonScene);

@@ -24,7 +24,7 @@ func generateEnemies():
 				var tile = generator.grid.get_value(randTile + Vector2i(x,y), 0);
 				if (tile != floorTile):
 					isValidSquare = false;
-				
+		
 		var isFarFromOthers = true;	
 		if isValidSquare == true:
 			for enemy in unitsToNotCreateNear:
@@ -34,7 +34,7 @@ func generateEnemies():
 		
 		if isValidSquare and isFarFromOthers:
 			spawnEnemy(randTile);
-			
+
 func spawnEnemy(pos: Vector2i):
 	var inst: BaseEnemy = enemyScene.instantiate();
 	get_parent().add_child(inst);
@@ -42,7 +42,3 @@ func spawnEnemy(pos: Vector2i):
 	inst.global_position = pos * Vector2i(16, 12);
 	inst.setUnitData(enemies.pick_random());
 	enemyCount -= 1;
-	
-
-		# var tile = generator.grid.get_value(randTile, 0);
-		# print(tile);

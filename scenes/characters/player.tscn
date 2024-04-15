@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_jrh5p"]
 [ext_resource type="PackedScene" uid="uid://41j2xcu8nw18" path="res://scenes/characters/base_unit.tscn" id="2_8eay1"]
-[ext_resource type="Resource" uid="uid://bmmaq5aif5ktb" path="res://scenes/characters/characterData/Witch_UnitData.tres" id="3_gt318"]
+[ext_resource type="Resource" uid="uid://b5lq16gs61htq" path="res://scenes/characters/characterData/GolemBig_UnitData.tres" id="3_sblf3"]
 
 [node name="Player" type="Node2D" node_paths=PackedStringArray("baseUnit")]
 script = ExtResource("1_jrh5p")
@@ -11,4 +11,5 @@ baseUnit = NodePath("BaseUnit")
 [node name="BaseUnit" parent="." instance=ExtResource("2_8eay1")]
 collision_layer = 18
 collision_mask = 3
-unitData = ExtResource("3_gt318")
+unitData = ExtResource("3_sblf3")
+speed_multiplier = 1.5

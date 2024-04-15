@@ -1,14 +1,12 @@
 class_name BaseUnit
 extends CharacterBody2D
 
-@export var Speed: int = 50
-@export var Health: float:
-	get: return healthBar.value
-	set(value): healthBar.value = value
+
 @export var unitData: UnitData;
 @export var projectilePrefab: PackedScene;
 @export var resourcePrefab: PackedScene;
 
+@export var speed_multiplier: float = 1.0
 
 var direction : Vector2
 var is_flipped = false
@@ -25,7 +23,7 @@ func _ready():
 func setUnitData(_unitData: UnitData):
 	unitData = _unitData
 	healthBar.max_value = unitData.health
-	Health = unitData.health
+	healthBar.value = unitData.health
 	anim.sprite_frames = unitData.spriteFrames
 
 func setTargetPosition(pos: Vector2):
@@ -36,7 +34,7 @@ func TryAttack():
 		_attack();
 		
 func _attack():
-	if (unitData.projectileTexture != null):
+	if (unitData.projectileTextures.size() > 0):
 		var inst = projectilePrefab.instantiate() as BaseProjectile;
 		var projectileDirection = (targetPosition - global_position).normalized();
 		inst.normalizedDirection = projectileDirection;
@@ -50,11 +48,10 @@ func _attack():
 
 func setMoveDirection(dir: Vector2):
 	direction = dir;
-	
-func _process(_delta):
-	healthBar.value = Health / unitData.health;
-	
-	if (Health < 0.0):
+
+func apply_damage(value: int):
+	healthBar.value = max(0, healthBar.value - value)
+	if (healthBar.value <= 0):
 		if get_parent() is PlayerController:
 			Global.load_hut_scene();
 		else:
@@ -72,12 +69,11 @@ func InstantiateDrops():
 				instantiatedResource.global_position = global_position + Vector2(randi_range(-resourceSpawnDist, resourceSpawnDist), randi_range(-resourceSpawnDist, resourceSpawnDist));
 				instantiatedResource.Refresh();
 
-
 func _physics_process(_delta):
 	z_index = roundi(global_position.y);
 	recoilTimer -= _delta;
 	if direction.length() > 0:
-		velocity = direction * unitData.speed;
+		velocity = direction * unitData.speed * speed_multiplier;
 		
 		if direction.x != 0.0:
 			is_flipped = direction.x < 0

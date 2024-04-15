@@ -19,7 +19,6 @@ config/icon="res://icon.svg"
 
 Global="*res://scenes/global.tscn"
 StoryProgress="*res://scenes/storyProgress.tscn"
-SceneLoader="*res://scenes/scene_loader.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]

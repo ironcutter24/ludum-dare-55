@@ -7,7 +7,6 @@ class_name UnitData
 @export var speed: float;
 @export var isSwingingAttack: bool = false;
 @export var projectileSpeed: float = 50;
-var projectileTexture: AtlasTexture;
 @export var projectileTextures: Array[AtlasTexture]
 @export var projectileAliveTime = 1.0;
 @export var projectileDamage = 10;

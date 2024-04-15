@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://co4tubqmptexi"]
+[gd_scene load_steps=2 format=3 uid="uid://dgybx1soudk0v"]
 
-[ext_resource type="Script" path="res://scripts/autoloads/scene_loader.gd" id="1_0cd41"]
+[sub_resource type="GDScript" id="GDScript_y8cdn"]
+script/source = "extends Node
+
+var sceneLoaded: Node = null;
+
+func load_new_scene(newScene: PackedScene):
+	get_tree().change_scene_to_packed(newScene)
+	\"\"\"
+	if (sceneLoaded != null):
+		sceneLoaded.free();
+	var instantiated = newScene.instantiate();
+	sceneLoaded = instantiated;
+	get_tree().root.add_child(instantiated);\"\"\"
+"
 
 [node name="SceneLoader" type="Node"]
-script = ExtResource("1_0cd41")
+script = SubResource("GDScript_y8cdn")

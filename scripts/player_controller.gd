@@ -6,7 +6,7 @@ var looking_right = true
 
 @export var isEnabled = true;
 @export var baseUnit: BaseUnit;
-	
+
 func _enter_tree():
 	Global.player_controller = baseUnit
 
