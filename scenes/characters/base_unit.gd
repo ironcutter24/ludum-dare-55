@@ -59,7 +59,7 @@ func apply_damage(value: int):
 		get_parent().queue_free();
 
 func InstantiateDrops():
-	for resource: ResourceWithCount in unitData.prices:
+	for resource: ResourceWithCount in unitData.drops:
 		for i in range(resource.count):
 			if randf() < 0.1:
 				var resourceSpawnDist = 10;

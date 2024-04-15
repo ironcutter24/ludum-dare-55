@@ -25,16 +25,16 @@ func refreshInventory():
 		inventoryList.add_child(inst);
 
 func canCraft(unit: UnitData) -> bool:
-	for k in unit.prices:
+	for k in unit.drops:
 		if k not in Global.playerRessources:
 			return false
-		if Global.playerRessources[k] < unit.prices[k]:
+		if Global.playerRessources[k] < unit.drops[k]:
 			return false
 	return true
 
 func expendCraft(unit: UnitData) -> void:
-	for k in unit.prices:
-		Global.playerRessources[k] -= unit.prices[k]
+	for k in unit.drops:
+		Global.playerRessources[k] -= unit.drops[k]
 
 func tryCraft(button: Button):
 	var unit = buttonMap[button]

@@ -22,7 +22,7 @@ func setUnit(_unit: UnitData):
 func _on_pressed():
 	if (can_build()):
 	
-		for costResource: ResourceWithCount in unitData.prices:
+		for costResource: ResourceWithCount in unitData.drops:
 			for inventoryResource: ResourceWithCount in Global.playerResources:
 				if costResource.resourceData.uniqueName == inventoryResource.resourceData.uniqueName:
 					inventoryResource.count -= costResource.count;
@@ -40,7 +40,7 @@ func _on_pressed():
 
 func can_build()-> bool:
 	return randf() > 0.5;
-	for costResource: ResourceWithCount in unitData.prices:
+	for costResource: ResourceWithCount in unitData.drops:
 		for inventoryResource: ResourceWithCount in Global.playerResources:
 			if costResource.resourceData.uniqueName == inventoryResource.resourceData.uniqueName:
 				if inventoryResource.count < costResource.count:
