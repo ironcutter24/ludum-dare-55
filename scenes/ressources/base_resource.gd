@@ -11,5 +11,8 @@ func Refresh():
 
 func _process(delta):
 	if has_overlapping_bodies():
+		for resource: ResourceWithCount in Global.playerResources:
+			if resource.resourceData.uniqueName == resourceData.uniqueName:
+				resource.count += 1;
 		queue_free();
 
