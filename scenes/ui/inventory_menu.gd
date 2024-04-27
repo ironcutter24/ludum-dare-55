@@ -19,6 +19,7 @@ func refreshInventory():
 	# Mass execution of children
 	for child in inventoryList.get_children():
 		inventoryList.remove_child(child)
+		child.queue_free()
 	
 	# Create player inventory
 	for resource: ResourceWithCount in Global.playerResources:
