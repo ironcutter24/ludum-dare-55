@@ -11,12 +11,12 @@ var player_controller : BaseUnit
 var playerResources: Array[ResourceWithCount] # Value is ressource name, key is how much the player has
 var playerUnit: UnitData # Unit the player is
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
 
 func _input(event):
+	if event.is_action_pressed("quit_dungeon"):
+		if StoryProgress.finishedSpawnTutorial:
+			load_hut_scene()
+	
 	if event.is_action_pressed("quit_application"):
 		get_tree().quit()
 
