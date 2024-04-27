@@ -12,3 +12,5 @@ Then collect their essence to **summon** them as your allies!
 - **WASD** >> Move
 - **Mouse** >> Aim
 - **LMB** >> Shoot
+- **R** >> Return to Witch's Hut
+- **Esc** >> Quit application
