@@ -52,8 +52,7 @@ func _ready():
 		spawnButton.setUnit(unit);
 		
 	refreshInventory();
-		
-
+	
 	# Add each resource to the player's inventory with count 0
 	if Global.playerResources.size() == 0:
 		for resource in Resources:
@@ -63,8 +62,9 @@ func _ready():
 			Global.playerResources.push_back(resourceWithCount);
 
 func _process(_delta):
-	if (StoryProgress.finishedSpawnTutorial and Global.playerUnit == null and !isGameScene):
-		spawnButtons.visible = true;
-	else:
-		spawnButtons.visible = false;
+	spawnButtons.visible = canShowSpawnButtons()
 	refreshInventory()
+
+func canShowSpawnButtons():
+	return StoryProgress.finishedSpawnTutorial and Global.playerUnit == null and !isGameScene
+

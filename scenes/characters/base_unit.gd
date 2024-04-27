@@ -28,7 +28,6 @@ func setUnitData(_unitData: UnitData):
 	healthBar.max_value = unitData.health
 	healthBar.value = unitData.health
 	anim.sprite_frames = unitData.spriteFrames
-	print(showHealthBar)
 	healthBar.visible = showHealthBar
 
 func setTargetPosition(pos: Vector2):

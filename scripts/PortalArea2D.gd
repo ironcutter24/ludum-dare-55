@@ -20,7 +20,6 @@ func _on_dialogic_signal(argument:String):
 		playerController.isEnabled = true;
 	if argument == "finished_spawn_tutorial":
 		StoryProgress.finishedSpawnTutorial = true;
-	print("got dialogic signal")
 
 func _process(_delta):
 	if has_overlapping_bodies():

@@ -6,7 +6,7 @@ class_name EnemyGenerator
 @export var floorTile: Resource;
 @export var enemies: Array[UnitData]
 @export var player: BaseUnit;
-@onready var unitsToNotCreateNear: Array[BaseUnit] = [player];
+@onready var unitsToNotCreateNear: Array[Node2D] = [player];
 
 var enemyCount = 10;
 var distBetweenUnits = 50;
