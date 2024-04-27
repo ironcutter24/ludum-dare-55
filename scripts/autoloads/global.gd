@@ -21,9 +21,9 @@ func _input(event):
 		get_tree().quit()
 
 func load_hut_scene():
+	Global.playerUnit = null;
 	load_packed_scene(hut_scene);
-	
-	
+
 func load_menu_scene():
 	get_tree().change_scene_to_file(menu_scene_path)
 
